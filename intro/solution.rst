@@ -1,5 +1,3 @@
-.. I don't want this to be the title of the page, rather a normal header...
-
 Introducing Myself
 ------------------
 
