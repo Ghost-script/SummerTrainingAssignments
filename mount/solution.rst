@@ -32,7 +32,7 @@ The first thing this code should do is to define a nice function that will open 
         else: #if the path doesn't exists, inform the user
             return "Something is fucked up, man..."
 
-The content of /proc/mounts difere slightly form the one of mount command. We need to define a funtion that reformats each line to match the output of mount command:
+The content of /proc/mounts differ slightly form the one of mount command. We need to define a funtion that reformats each line to match the output of mount command:
 
 .. code:: python
    :number-lines: 32
