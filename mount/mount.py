@@ -20,7 +20,9 @@ def readFile(fileName):
     """
     if os.path.exists(fileName):#We check of the path given in the argument exists in the filesystem
         fileRead = open (fileName)#We open the file given in default mode (read-only)
-        return fileRead.read()#We return a String with the content of all the file in it
+        content = fileRead.read()#We return a String with the content of all the file in it
+        fileRead.close()#We propperly close the file
+        return content
     else: #if the path doesn't exists, inform the user
         return "Something is fucked up, man..."
 
