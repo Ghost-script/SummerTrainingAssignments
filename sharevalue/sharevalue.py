@@ -135,10 +135,10 @@ class yahoo_share_retriever (from_url_retriever):
     def __init__ (self, nasdaq_symbol):
        
         if nasdaq_symbol.isalpha(): # Risky, dont' know if they are only
-                                       # only alphabets, but anyway...
+                                    # only alphabets, but anyway...
 
             url = ["http://download.finance.yahoo.com"
-                        "/d/quotes.csv?s=", "&f=l1"]
+                           "/d/quotes.csv?s=", "&f=l1"]
             url.insert(1, nasdaq_symbol)
             url = "".join(url)
 
@@ -178,8 +178,9 @@ class yahoo_share_retriever (from_url_retriever):
 if __name__ == "__main__":
 
     if len(sys.argv) == 2:
-        share_printer = yahoo_share_retriever (sys.argv[1]).print_content()
+        yahoo_share_retriever (sys.argv[1]).print_content()
         sys.exit(0)
+
     else:
         sys.exit("Usage: ./sharevalue.py <NASDAQ_SYMBOL>")
 
