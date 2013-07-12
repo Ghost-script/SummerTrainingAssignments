@@ -1,4 +1,4 @@
-Shared Value
+Share Value
 ------------
 
 The task was to write a code that prints the share value of a given NASDAQ company. The final usage should be::
