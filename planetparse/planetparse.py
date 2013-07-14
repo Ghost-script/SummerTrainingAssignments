@@ -13,24 +13,30 @@ from bs4 import BeautifulSoup
 
 URL_CONSTANT = "http://planet.fedoraproject.org"
 
-def print_content_selection ():
+def print_blog_info ():
         
     """
-    This method will fetch all the content of the given tags.
-    d as much tags as you want, using the syntax
-    of BeautifulSoup: for instance, if you want to select
-    tags for it's class, the correct argument is ".class". If
-    you want to select tags that are inside other tags, use
-    "tag_parent > tag_child" For A complete reference, see:
-    http://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors
+    This method will use BeautifulSoup to parse the content of the given url
+    and stract from it the desired content. With select() method from 
+    BeautifulSoup you can get all tags given it's class, id, or any other 
+    attribute. for a complete reference, see http://tinyurl.com/nn4m7hg.
+
+    Steps made: 
+        1- Fetch the whole html with urllib2 urlopen()
+        2- "Soupe" it with BeautifulSoup
+        3- Select the desired tag's content
+        4- print accordingly
 
     """
+
     html_doc = urlopen (URL_CONSTANT)
     html_souped = BeautifulSoup (html_doc)
 
     z = 0
+    
+    for x, y in zip(html_souped.select(".blog-entry-author > a"),
+                    html_souped.select(".blog-entry-title > a")):
 
-    for x, y in zip(html_souped.select(".blog-entry-author > a"), html_souped.select(".blog-entry-title > a")):
         z += 1
         print """
 Blog Entry n. %.2i:
@@ -42,7 +48,7 @@ Author: %s
 
 
 if __name__ == "__main__":
-    print_content_selection()
+    print_blog_info ()
     exit(0)
 
 
