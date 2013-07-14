@@ -40,7 +40,7 @@ def print_blog_info ():
     html_doc.close()
 
     z = 0
-    
+
     for x, y in zip(html_souped.select(".blog-entry-author > a"),
                     html_souped.select(".blog-entry-title > a")):
 
