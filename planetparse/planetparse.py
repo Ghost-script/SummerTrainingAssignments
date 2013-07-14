@@ -17,7 +17,7 @@ def print_blog_info ():
         
     """
     This method will use BeautifulSoup to parse the content of the given url
-    and stract from it the desired content. With select() method from 
+    and extract from it the desired content. With select() method from 
     BeautifulSoup you can get all tags given it's class, id, or any other 
     attribute. for a complete reference, see http://tinyurl.com/nn4m7hg.
 
@@ -29,8 +29,15 @@ def print_blog_info ():
 
     """
 
-    html_doc = urlopen (URL_CONSTANT)
+    try:
+        html_doc = urlopen (URL_CONSTANT)
+
+    except:
+        exit("\nError: Something is wrong with http://planet.fedoraproject.org"
+             " or your internet connection\n")
+
     html_souped = BeautifulSoup (html_doc)
+    html_doc.close()
 
     z = 0
     
@@ -38,6 +45,7 @@ def print_blog_info ():
                     html_souped.select(".blog-entry-title > a")):
 
         z += 1
+
         print """
 Blog Entry n. %.2i:
 -----------------
