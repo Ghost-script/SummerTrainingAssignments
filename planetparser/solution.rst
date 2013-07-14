@@ -28,6 +28,8 @@ First problem arises. Setting PYTHONDONTWRITEBYTECODE="" works it around
     Successfully installed beautifulsoup4
     Cleaning up...
     (virtual_planetparse) $ pip install html5lib
+    Successfully installed html5lib
+    Cleaning up...
 
 Code
 ~~~~
@@ -41,7 +43,6 @@ This is the whole code:
 
     .. code:: python
         :number-lines: 1
-
 
         #!/usr/bin/env python
 
