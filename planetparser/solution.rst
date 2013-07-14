@@ -14,7 +14,7 @@ As I had already installed python-virtualenv, I've jumpted directly to create a 
     $virtualenv virtual_planetparse
     The PYTHONDONTWRITEBYTECODE environment variable is not compatible with setuptools. Either use --distribute or unset PYTHONDONTWRITEBYTECODE.
 
-First problem arises. Don't know why, but setting PYTHONDONTWRITEBYTECODE="" it works around
+First problem arises. Setting PYTHONDONTWRITEBYTECODE="" works it around
 
 ::
 
