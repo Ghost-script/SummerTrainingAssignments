@@ -33,7 +33,7 @@ Blog Entry n. %.2i:
 
 Tile: '%s'
 Author: %s
-        """ % (z, tmp[0], tmp[1])
+        """ % (z, tmp[1], tmp[0])
 
 
 if __name__ == "__main__":
