@@ -24,7 +24,7 @@ Use of pwd module and choose the user that have proper right to log in, which ar
         """
 
 
-        user_list = pwd.getpwall()
+        user_list = getpwall()
         for x in range(len(user_list)):
             if user_list[x][5].find("home") >= 0:
                 print user_list[x][0]
@@ -34,4 +34,4 @@ Use of pwd module and choose the user that have proper right to log in, which ar
 
     if __name__ == "__main__":
         get_users_list()
-        sys.exit()
+        exit()
