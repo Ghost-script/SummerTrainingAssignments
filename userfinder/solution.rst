@@ -4,7 +4,7 @@ Write a code that will print the list of available user to log in.
 
 Solution
 --------
-Use of pwd module and choose the user that have proper right to log in, which are those having home directory and root. We achieve this with pwd module, and its function getpwall(), which returns a list of all users passwd database, which contains several informations, as name, password, and else. As all users can't be used to login, not all user returned by pwd.getpwall() are valid. We have to filter them. The only ones which we want are those which have it's own directory in /home, and root, which has its own home in /root. Thus we can filter them by finding wether their home directory is in /home or /root, by searching in each user database the information about the home dir, which is in the index 5.
+Use of spwd module, that returns a list of the databases of all users whith proper shell init configuration (i.e. they don't haver either /bin/false or /sbin/nologin). From this list, there still are few that are not able to be used for login, and are marked with "*" or "!" in the password index of the database (ps_pwd, or 1). When we discard those with this symbols in the password field, we end up with only those users capable of login.
 
 `Link to Code at GitHub <https://github.com/JCaselles/SummerTrainingAssignments/blob/master/userfinder/userfinder.py>`_
 
@@ -12,28 +12,33 @@ Use of pwd module and choose the user that have proper right to log in, which ar
     
     #!/usr/bin/env python
 
-    from pwd import getpwall
+    from spwd import getspall
     from sys import exit
 
     def get_users_list ():
-        
+
         """
         This function prints the list of users that are able to login
-        into the system. To achieve this, we use the pwd module and its function
-        getpwall(), which returns a list of each user database. Then we filter it
-        to print just the users that can login into the system.
+        into the system. To achieve this, we use the spwd module and its function
+        getspall(), which returns a list of each user password database,
+        like /etc/shadow file. Then we filter it to print just the users 
+        that have a proper password, and not marked with "*" or "!", which means
+        they are not suited for login into the system.
         
-        """
+        """ 
+        
+        
+        user_list = getspall()
 
+        filtered_list =  [user.sp_nam for user in user_list \
+                          if user.sp_pwd.find("*") == -1 \
+                          and user.sp_pwd.find("!") == -1]
 
-        user_list = getpwall()
-        for x in range(len(user_list)):
-            if user_list[x][5].find("home") != 0:
-                print user_list[x][0]
-            elif user_list[x][5].find("root") != 0:
-                print user_list[x][0]
+        for x in filtered_list:
+            print x
 
 
     if __name__ == "__main__":
         get_users_list()
         exit(0)
+
