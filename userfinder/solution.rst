@@ -4,7 +4,7 @@ Write a code that will print the list of available user to log in.
 
 Solution
 --------
-Use of spwd module, that returns a list of the databases of all users whith proper shell init configuration (i.e. they don't haver either /bin/false or /sbin/nologin). From this list, there still are few that are not able to be used for login, and are marked with "*" or "!" in the password index of the database (ps_pwd, or 1). When we discard those with this symbols in the password field, we end up with only those users capable of login.
+Use of spwd module, that returns a list of the databases of all users whith proper shell init configuration (i.e. they don't haver either /bin/false or /sbin/nologin). From this list, there still are few that are not able to be used for login, and are marked with "``*``" or "``!``" in the password index of the database (ps_pwd, or 1). When we discard those with this symbols in the password field, we end up with only those users capable of login.
 
 `Link to Code at GitHub <https://github.com/JCaselles/SummerTrainingAssignments/blob/master/userfinder/userfinder.py>`_
 
