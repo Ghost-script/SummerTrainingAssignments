@@ -1,0 +1,21 @@
+body {background-color:#53290B;font-size:100%;font-family:Verdana, sans}
+
+/* Size of divs */
+
+/* General Style */
+p,ul,a {color:#FFF8DC;text-align:justify;font-size:0.85em;}
+h1 {color:#5CE6E6;}
+h2 {color:#40A1A1;}
+
+/* Concret style */
+#resume h2 {color:#FFA5D2;}
+#resume h3 {color:#B2FF99;}
+#resume hr {color:blue;}
+
+/* Dimensions */
+#container {width:910px;height:100%;}
+#header {width:900px;border-style:solid;border-width:5px;border-color:red;text-align:center;}
+#Content {width:910px;margin-top:10px}
+#General {width:600px;float:left;height:100%;border-style:solid;border-width:5px;border-color:yellow;}
+#resume {width:290px;float:left;height:100%;border-style:solid;border-width:5px;border-color:blue;}
+
