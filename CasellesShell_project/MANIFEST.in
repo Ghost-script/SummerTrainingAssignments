@@ -1,2 +1,2 @@
-include myshell/*.py
+include scripts/*
 include README.rst
