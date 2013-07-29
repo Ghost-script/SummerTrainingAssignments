@@ -9,6 +9,7 @@ from os import path
 from twython import Twython, TwythonError
 from webbrowser import open as webopen
 from argparse import ArgumentParser
+import json
 
 CONSUMER_KEY = "cGZNRDAMsJIDqDtpasgg"
 CONSUMER_SECRET = "tIpyNSjr32wiCSPJeIdD8qtxMNOyGRohcbX9nMtNg"
@@ -26,6 +27,7 @@ def auth_control ():
 
     token = None
     secret = None
+    tokens_f = None
 
     try: 
         tokens_f = open(path.expanduser("~/.tweetiruprc"), "r")
@@ -38,22 +40,21 @@ def auth_control ():
         token, secret = get_auth_tokens() # Get new tokens, see below
         
         try:
+            token_o = {"OAUTH_TOKEN" : token, "OAUTH_TOKEN_SECRET" : secret}
             tokens_f = open(path.expanduser("~/.tweetiruprc"), "w")
-            tokens_f.write("OAUTH_TOKEN: %s\n" % token)
-            tokens_f.write("OAUTH_TOKEN_SECRET: %s\n" % secret)
- 
-        except IOError:
-            exit("Unexpected error")
+            json.dump(token_o, tokens_f)
+             
+        except IOError, e:
+            exit("Unexpected error: %s" % e)
 
-        finally:
+        else:
             tokens_f.close()
 
     else:
-        token = tokens_f.readline().split(" ")[1].strip()
-        secret = tokens_f.readline().split(" ")[1].strip()
+        token_o = json.load(tokens_f)
         tokens_f.close()
 
-    return Twython(CONSUMER_KEY, CONSUMER_SECRET, token, secret)
+    return Twython(CONSUMER_KEY, CONSUMER_SECRET, token_o["OAUTH_TOKEN"], token_o["OAUTH_TOKEN_SECRET"])
 
 
 
