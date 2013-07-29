@@ -6,7 +6,7 @@ Command-line twitter updater tool.
 """
 from sys import exit
 from os import path
-from twython import Twython
+from twython import Twython, TwythonError
 from webbrowser import open as webopen
 from argparse import ArgumentParser
 
@@ -38,14 +38,16 @@ def auth_control ():
         token, secret = get_auth_tokens() # Get new tokens, see below
         
         try:
-            tokens_f = open(path.expanduser("~/.tweetuprc"), "w")
-            tokens_f.write("OAUTH_TOKEN: " + token + "\n")
-            tokens_f.write("OAUTH_TOKEN_SECRET: " + secret + "\n")
-            tokens_f.close()
+            tokens_f = open(path.expanduser("~/.tweetiruprc"), "w")
+            tokens_f.write("OAUTH_TOKEN: %s\n" % token)
+            tokens_f.write("OAUTH_TOKEN_SECRET: %s\n" % secret)
  
         except IOError:
             exit("Unexpected error")
-    
+
+        finally:
+            tokens_f.close()
+
     else:
         token = tokens_f.readline().split(" ")[1].strip()
         secret = tokens_f.readline().split(" ")[1].strip()
@@ -96,8 +98,26 @@ def tweet_image (image_path, status):
 
     """
 
-    pic = open(image_path, "rb")
-    auth_control().update_status_with_media(media = pic, status = status)
+    try:
+        pic = open(image_path, "rb")
+        
+    except IOError, e:
+        exit("\n*Tweetir'up!* Error opening image: %s" % e)
+    
+    else:
+
+        try:
+            auth_control().update_status_with_media(media = pic, status = status)
+
+        except TwythonError:
+            exit("\n*Tweetir'up!* Unespected server error")
+        
+        else:
+            print "\n*Tweetir'up!* Successfully twitted image"
+            
+        finally:
+            pic.close()
+        
 
 
 
