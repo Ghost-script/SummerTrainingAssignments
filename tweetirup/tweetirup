@@ -1,0 +1,126 @@
+#!/usr/bin/env python
+
+"""
+Command-line twitter updater tool.
+
+"""
+from sys import exit
+from os import path
+from twython import Twython
+from webbrowser import open as webopen
+from argparse import ArgumentParser
+
+CONSUMER_KEY = "cGZNRDAMsJIDqDtpasgg"
+CONSUMER_SECRET = "tIpyNSjr32wiCSPJeIdD8qtxMNOyGRohcbX9nMtNg"
+
+def auth_control ():
+    """
+    Controls the authentication proces. At the very first run, it will ask
+    user to authorize the app in browser, and to write down the ping generated.
+    Then it generates the necessary tokens for authenticate the app, and stores
+    them for further runs. 
+
+    Returns: Twython instance fully authenticated, ready to perfom.
+    
+    """
+
+    token = None
+    secret = None
+
+    try: 
+        tokens_f = open(path.expanduser("~/.tweetiruprc"), "r")
+        """
+        TODO: evaluate the use of ConfigParse
+
+        """
+    
+    except IOError:
+        token, secret = get_auth_tokens() # Get new tokens, see below
+        
+        try:
+            tokens_f = open(path.expanduser("~/.tweetuprc"), "w")
+            tokens_f.write("OAUTH_TOKEN: " + token + "\n")
+            tokens_f.write("OAUTH_TOKEN_SECRET: " + secret + "\n")
+            tokens_f.close()
+ 
+        except IOError:
+            exit("Unexpected error")
+    
+    else:
+        token = tokens_f.readline().split(" ")[1].strip()
+        secret = tokens_f.readline().split(" ")[1].strip()
+        tokens_f.close()
+
+    return Twython(CONSUMER_KEY, CONSUMER_SECRET, token, secret)
+
+
+
+def get_auth_tokens():
+    """
+    Gets authentication tokens using Twython procedure.
+    It will open a browser tab to ask user to allow this app,
+    and copy the ping.
+    
+    Returns: tokens "OAUTH_TOKEN" and "OAUTH_TOKEN_SECRET" in a tuple
+
+    """
+
+    first_step = Twython(CONSUMER_KEY, CONSUMER_SECRET)
+    mid_step = first_step.get_authentication_tokens()
+    webopen(mid_step["auth_url"], 2)
+    
+    auth_pin = raw_input("This is your first time using this app, you have to"
+                        " authorize it.\nA new tab in your browser has been open" 
+                        ", where you can authorize this app. Remember to copy"
+                        " the pin number given to you.\n\nEnter the pin number"
+                        "here: ")
+
+    first_step = None
+    
+    twy = Twython(CONSUMER_KEY, CONSUMER_SECRET, 
+                  mid_step["oauth_token"], mid_step["oauth_token_secret"])
+
+    final_tokens = twy.get_authorized_tokens(auth_pin)
+
+    return final_tokens["oauth_token"], final_tokens["oauth_token_secret"]
+
+
+
+def tweet_image (image_path, status):
+    """
+    Tweets an image with it's correspondent description.
+    Uses Twython's update_status_with_media method.
+
+    param image_path: the path to the image
+    param status: the description (tweet, status) annexed to this image
+
+    """
+
+    pic = open(image_path, "rb")
+    auth_control().update_status_with_media(media = pic, status = status)
+
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    """
+    Parsing options:
+        -f --file: (required) path to image
+        -d --description: (optional) description to append to the image.
+                          If not provided, adds default string
+
+    """
+    
+    parser.add_argument("-f", "--file", help = "Add path to image", required = True)
+    parser.add_argument("-d", "--description",
+                        help = "Add optional description of the image")
+    
+    args = parser.parse_args()
+    
+    if args.description: 
+        descript = args.description
+    else:
+        descript = "Twitted with Tweetir'up!"
+
+    tweet_image(args.file, descript)
+
