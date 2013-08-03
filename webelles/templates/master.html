@@ -8,8 +8,24 @@
                         filename='hello.css')}}" />
 </head>
 <body>
-
-{% block body %}{% endblock %}
+    <div id = "header">
+        <!-- Header -->
+    </div>
+    <div id = "main">
+        <!-- Main container, with navigation menu and content -->
+        <div id = "nav_menu">
+            <!-- Navigation menu -->
+        </div>
+        <div id = "content">
+            <!-- Content block -->
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <div id = "footer">
+        <!-- Footer -->
+    </div>
+    
 
 </body>
 </html>

@@ -1,0 +1,454 @@
+2013-07-23 05:31:27	praveenkumar	Good morning.
+2013-07-23 05:38:55	sayan	praveenkumar, good morning :)
+2013-07-23 05:48:50	--	rahul is now known as Guest14495
+2013-07-23 07:16:51	--	dastaan93_ is now known as altair
+2013-07-23 10:19:44	mohona_	new to linux
+2013-07-23 10:20:12	mohona_	installed it and i am unable to mount hard disk
+2013-07-23 10:20:17	mohona_	help!!!
+2013-07-23 10:41:11	kushal	mohona_, which distribution you installed ?
+2013-07-23 10:43:21	mohona_	mint 15
+2013-07-23 10:43:44	kushal	oh
+2013-07-23 10:43:54	kushal	mohona_, #ubuntu channel might help
+2013-07-23 10:44:07	mohona_	okay thanks let me try :)
+2013-07-23 10:55:45	dot|not	Linux Mint has automount ..
+2013-07-23 11:24:40	kushal	dot|not, I guess she formatted them too
+2013-07-23 11:25:07	dot|not	Should still work .. but I'm no Mintuser. :)
+2013-07-23 13:43:40	kirk_iowa	good morning (test)
+2013-07-23 13:45:34	dot|not	good morning kirk_iowa
+2013-07-23 14:08:55	kushal	I might be 5-10 minutes late
+2013-07-23 14:09:06	kushal	oops
+2013-07-23 14:09:33	kushal	stupid things I am writing :(
+2013-07-23 14:36:23	kushal	------------SESSION STARTS---------------
+2013-07-23 14:36:25	kushal	Roll call
+2013-07-23 14:36:31	rahulch	Rahul Chowdhury
+2013-07-23 14:36:31	iam_sudip	iam_sudip:
+2013-07-23 14:36:33	puspita	Puspita Ghosh
+2013-07-23 14:36:33	tenstormavi	Avinash Kumar Dasoundhi
+2013-07-23 14:36:37	devyani	Devyani
+2013-07-23 14:36:40	manishjain2792	manish jain
+2013-07-23 14:36:41	anuragk	anurag kumar
+2013-07-23 14:36:42	zishan	Sheesh Mohsin
+2013-07-23 14:36:42	shantanu	Shantanu Sarkar
+2013-07-23 14:36:58	shalini1	Shalini Roy
+2013-07-23 14:37:02	m0rin09m`	Shungoh Kaetsu
+2013-07-23 14:37:28	avik	avik ghosh
+2013-07-23 14:37:49	kushal	12 names
+2013-07-23 14:38:03	J_Caselles	Josep Caselles
+2013-07-23 14:38:06	elita15	elita lobo
+2013-07-23 14:38:31	kushal	14
+2013-07-23 14:38:37	kushal	any good enough
+2013-07-23 14:38:47	kushal	so we finished first month :)
+2013-07-23 14:39:03	kushal	still around 20 students are with us, which is great :D
+2013-07-23 14:39:05	Armageddon	15
+2013-07-23 14:39:11	kushal	Armageddon, :D
+2013-07-23 14:39:39	kushal	today's session will be on different topic and things
+2013-07-23 14:39:43	sonam	sonam
+2013-07-23 14:39:53	rashmi	Rashmi
+2013-07-23 14:39:55	kushal	anyone else left for roll call ?
+2013-07-23 14:39:58	kushal	please do it now
+2013-07-23 14:39:59	amresh	amresh kumar
+2013-07-23 14:40:24	kirk_iowa	kirk
+2013-07-23 14:40:58	umesh	umesh agarwal
+2013-07-23 14:41:28	kushal	so in today's session we will look back at what we did still now, everyone please tell what all you never liked and where/how we can improve this training ? (we have around 2 months left)
+2013-07-23 14:41:38	kushal	we can do it one by one
+2013-07-23 14:41:53	kushal	I will start asking nicks based on their roll call today
+2013-07-23 14:42:00	kushal	please tell us in details
+2013-07-23 14:42:14	kushal	rahulch, you first :)
+2013-07-23 14:42:43	kushal	iam_sudip, you can start talking too :)
+2013-07-23 14:44:04	rahulch	kushal, the training has been awesum I must say :D I enjoyed it a lot. Regarding the coming 2 months, I think it would be good if there were some sessions on C++, which may be useful for potential software developers :)
+2013-07-23 14:44:35	kushal	rahulch, tell us what all you never liked ? not what you liked :p
+2013-07-23 14:44:53	kushal	iam_sudip, any input from you ?
+2013-07-23 14:44:56	rahulch	kushal, I can't find any :P
+2013-07-23 14:45:06	kushal	rahulch, ok
+2013-07-23 14:45:11	kushal	iam_sudip, your turn
+2013-07-23 14:45:18	iam_sudip	No. I liked it.
+2013-07-23 14:45:30	kushal	iam_sudip, no suggestions ?
+2013-07-23 14:46:02	kushal	puspita, tenstormavi go ahead
+2013-07-23 14:46:05	tenstormavi	I want some more time for long and typical home tasks because we have college also. And want a class of C. Otherwise it is all good and i am learning a lot thanks.
+2013-07-23 14:46:20	iam_sudip	All things I am learning here is all new. and whatever I am learning here I found it's perfect from my point of view.
+2013-07-23 14:46:45	kushal	puspita, you, any points?
+2013-07-23 14:47:27	kushal	devyani, manishjain2792 any input ?
+2013-07-23 14:47:48	puspita	kushal, Firstly this online training is absolutly new starting with roll call to assignment. Initally I had problem to catch up but eventually managed. I always got help from the channel whenever i required. As a whole i realy am liking this training.
+2013-07-23 14:48:10	zishan	in the middle of training, when python language starts, i found quite difficulty, but it is very good for me, and i really like the training
+2013-07-23 14:48:12	kushal	puspita, there must be something that you never liked!
+2013-07-23 14:48:38	kushal	he suddenly talks and then vanishes
+2013-07-23 14:48:50	kushal	anuragk, zishan
+2013-07-23 14:49:17	devyani	kushal, i think the training is just perfect, there is nothing that i didnt like about it, rather we need to keep up with it :)
+2013-07-23 14:49:18	puspita	kushal, to be honest i never liked the sarcastic comments i got, but somehow that always made me search ever doubt of mine in google before asking :) . It just made me self-dependent.
+2013-07-23 14:49:33	zishan	 in the middle of training, when python language starts, i found quite difficulty, but it is very good for me, and i really like the training
+2013-07-23 14:50:28	kushal	m0rin09m`, avik speak up
+2013-07-23 14:50:38	anuragk	there are many things i like here. otherwise, i will want someone to explain the codes submitted for hometask. I men looking at them..
+2013-07-23 14:50:46	avik	well, I am absolutely cool with this training.. Its already pretty better. I dont feel that any changes needs to be introduced. But, I must say that its a lot better and upgraded from previous year's sessions that what i got to hear from a couple of trainees of last year... Many new things and concepts has been introduced this year. I would like to say that if a short session about C and C++ could be conducted then it would have been a little better, and would
+2013-07-23 14:50:47	avik	have been helpfull for those who has got a keen interest in software developing... and the rest is all good.. Thanks for everything Kushal.. and i didnt find anything to be disliked in this training. Thank You. :)
+2013-07-23 14:51:24	anuragk	I feel mine was quite simple. How to think in that way.
+2013-07-23 14:51:49	kushal	ok
+2013-07-23 14:52:03	kushal	J_Caselles, elita15 your input
+2013-07-23 14:52:52	avik	yeah i agree with anuragk. it would be a lot helpfull if the codes are explained by someone. i mean the one which are given for hometasks.
+2013-07-23 14:53:06	kushal	noted
+2013-07-23 14:53:13	Armageddon	!
+2013-07-23 14:53:17	kushal	Armageddon, sonam input
+2013-07-23 14:53:18	Armageddon	I didn't understand that point
+2013-07-23 14:53:23	kushal	Armageddon, which one ?
+2013-07-23 14:53:25	sonam	kushal,the session is good overall, inspite of facing some difficulty regarding git, python etc as it's all new to me. hope the session will be useful for us in future. thank you.
+2013-07-23 14:53:28	Armageddon	what do  you mean codes explained by someone ?
+2013-07-23 14:53:55	kushal	Armageddon, means someone will go through line by line and explains what it is doing
+2013-07-23 14:53:59	kushal	or why
+2013-07-23 14:54:09	J_Caselles	If I had to say something, at some point the pace was a little bit slow, but generally is difficult enought for me, so I'm happy
+2013-07-23 14:54:50	kushal	ok
+2013-07-23 14:54:51	Armageddon	kushal, that's what the comments are supposed to do
+2013-07-23 14:55:01	kushal	Armageddon, True
+2013-07-23 14:55:04	Armageddon	it's a waste of time in my opinion, I took my time to write my comments
+2013-07-23 14:55:13	kushal	Armageddon, yes
+2013-07-23 14:55:14	Armageddon	and everyone else should've as well, my comments took twice as much as my code took
+2013-07-23 14:55:14	kavis_1	sorry kushal , for being late
+2013-07-23 14:55:23	kushal	kavis_1, no problem
+2013-07-23 14:55:32	elita15	kushal, the training is very good.  It also helped me become independent.  I wish we were given extra time for submitting assignments as college has started.
+2013-07-23 14:55:45	m0rin09m`	it will be nice to have a review session for each assignment. so that everyone can share and understand why other people use the particular logic in their code. and comes up with the better solution. there are so many different way you can solve the problem in python. so it may help us to choose which solution is better in certain scenario.
+2013-07-23 14:55:54	anuragk	kushal: I meant, the best codes to be explained. like m0rin09m` always comes up with something good.
+2013-07-23 14:56:00	J_Caselles	Armageddon: also, it's a good real life practice to understand code without much comments
+2013-07-23 14:56:30	Armageddon	J_Caselles, no, I agree with that, but I'm talking about this class
+2013-07-23 14:56:33	kushal	Armageddon, any input from you ?
+2013-07-23 14:56:46	Armageddon	well, I already gave my input previously about the losing time
+2013-07-23 14:56:52	Armageddon	for example, here's what I would suggest
+2013-07-23 14:56:59	Armageddon	we started by losing time over the shell
+2013-07-23 14:57:15	kushal	ok
+2013-07-23 14:57:15	Armageddon	that was a waste of time, people should've learned the shell before the sessions
+2013-07-23 14:57:18	elita15	kushal, also it would be better if we could have guest lectures on weekends if possible as most of us are unable to attend it due to college/work when it is in the afternoons.
+2013-07-23 14:57:28	Armageddon	people should've learned git before the sessions
+2013-07-23 14:57:40	Armageddon	what I would suggest is to divide the sessions into topics
+2013-07-23 14:57:48	supriya	supriya saha
+2013-07-23 14:57:49	Armageddon	instead of one big session about python that starts with bash
+2013-07-23 14:57:57	kushal	Armageddon, actually those are the part of the sessions :) we are also trying to teach them those things :)
+2013-07-23 14:57:58	supriya	sorry for being late
+2013-07-23 14:58:19	Armageddon	kushal, no I understand, but here's the thing, I joined thinking it would start with python
+2013-07-23 14:58:25	kushal	Armageddon, I will keep in mind about diving the sessions
+2013-07-23 14:58:26	Armageddon	it started with something totally different
+2013-07-23 14:58:41	dot|not	kushal: But people need to be willing to learn. Not just sit in class and wait for everything being fed to them.
+2013-07-23 14:58:42	kushal	Armageddon, so the message was kind of wrong , you mean
+2013-07-23 14:58:43	Armageddon	for example, you can make topics, shell first, git second, etc...
+2013-07-23 14:59:01	Armageddon	the advertisement was wrong
+2013-07-23 14:59:03	kushal	dot|not, understood
+2013-07-23 14:59:13	kushal	Armageddon, that was there in the wiki page
+2013-07-23 14:59:18	kushal	I guess people missed that
+2013-07-23 14:59:23	Armageddon	I did as well
+2013-07-23 14:59:37	Armageddon	so if it was there, then it was my fault
+2013-07-23 14:59:46	kushal	Armageddon, no, not like that
+2013-07-23 15:00:10	kushal	anyway, we will discuss it in few minutes
+2013-07-23 15:00:17	Armageddon	no, if I missed something that you did, then it is not your fault, it's mine
+2013-07-23 15:00:35	kushal	sonam, rashmi amresh speak
+2013-07-23 15:01:08	kushal	sonam, rashmi amresh ?
+2013-07-23 15:01:19	sonam	kushal,the session is good overall, inspite of facing some difficulty regarding git, python etc as it's all new to me. hope the session will be useful for us in future. thank you.
+2013-07-23 15:01:47	kushal	kirk_iowa, umesh
+2013-07-23 15:01:54	rashmi	i just tried tried to get whatever is taught,and rest is fine about the sessions
+2013-07-23 15:02:00	kirk_iowa	sorry, some of this has already been covered by others...
+2013-07-23 15:02:14	kirk_iowa	what i liked:  I like the overall approach.  Using various commonly used tools as part of the course work, for example: git and irc.
+2013-07-23 15:02:23	umesh	kushal, I felt that the procedure to explain things is very favourable for beginners like us, also it allows us to become self dependent.
+2013-07-23 15:02:28	kirk_iowa	what i have not liked:  some paticularly detailed information might be better provided in prepared docs with *more* step-by-step usage exercises.  This might get people using those tools, that they are unfamiliar with, faster and easier (like git, shell, file system, mail list).
+2013-07-23 15:02:42	kirk_iowa	suggestions: i learn best by doing excercises.  For example: typing them out and going through the processes, and seeing how they work.  We have done that in session numerous times.  I just wish that the reading assignments had *more* simple exercises to do while reading, to help learn the new concepts and build upon concepts learned earlier.
+2013-07-23 15:02:47	kirk_iowa	<eof>
+2013-07-23 15:03:15	kushal	kirk_iowa, ok
+2013-07-23 15:03:39	kushal	kavis_1, supriya any thing you want to say ?
+2013-07-23 15:03:50	kushal	Christi123, ?
+2013-07-23 15:04:00	supriya	no kushal :)
+2013-07-23 15:04:10	kushal	kavis_1, Christi123 ?
+2013-07-23 15:04:56	kushal	anyone else wants to say anything ?
+2013-07-23 15:05:03	shantanu	i liked the training. it had a good start. but i found it very hard in the later part of the python sessions. i was not able to solve and submit some tasks in time. i expected some more explainations before getting the tasks on those topics. but later on i got it from some detailed sessions on those topics. but its cool to attend it :)
+2013-07-23 15:05:59	kushal	ok
+2013-07-23 15:06:01	kushal	now
+2013-07-23 15:06:06	kushal	about C/C++
+2013-07-23 15:06:13	kushal	we tried to do C before
+2013-07-23 15:06:33	kushal	but the amount of errors people keep getting is really difficult to track over irc
+2013-07-23 15:06:39	kushal	same goes to C++
+2013-07-23 15:07:20	kushal	and coming back to Armageddon's point
+2013-07-23 15:07:42	kushal	what he said is correct about code comments
+2013-07-23 15:08:25	kushal	Why I never went out to explain code ? I always wanted people to read code comments and ask the person who wrote if required
+2013-07-23 15:08:36	kushal	they should not ask me as I never wrote the code
+2013-07-23 15:08:43	kushal	btw, feel free to talk everyone
+2013-07-23 15:08:57	kushal	I missed the comma :(
+2013-07-23 15:09:01	Armageddon	!
+2013-07-23 15:09:08	kushal	Armageddon, free talking now :)
+2013-07-23 15:09:10	kushal	talk
+2013-07-23 15:09:12	dot|not	Which leads to another problem: Nobody is here in the IRC. J_Caselles, Armageddon, piotrekkt, kirk_iowa.
+2013-07-23 15:09:17	Armageddon	just to clarrify things, I've been here for a long time
+2013-07-23 15:09:25	dot|not	These are the only people having conversations. (Oh, and kushal.)
+2013-07-23 15:09:40	Armageddon	I've talked about code with dot|not, J_Caselles, kushal, etc...
+2013-07-23 15:09:46	kirk_iowa	i have a suggestion for those that want to begin learning C (free online course). google: harvard CS50.  or "This is CS50".
+2013-07-23 15:09:48	Armageddon	we've bounced ideas about code, we learned from each other etc...
+2013-07-23 15:10:11	Armageddon	we always made the deadlines
+2013-07-23 15:10:25	kushal	Armageddon, correct
+2013-07-23 15:10:28	Armageddon	and also I managed to contribute to the book at the same time
+2013-07-23 15:10:47	kushal	talking is very required
+2013-07-23 15:11:32	Armageddon	coding is not about having problems, you'll ALWAYS have problems, it's about solving those problems
+2013-07-23 15:12:10	Armageddon	I had to learn regex during the course to be able to do some of the stuff more easily, like searching
+2013-07-23 15:12:20	Armageddon	if it required stuff I needed to learn, so be it
+2013-07-23 15:12:57	dot|not	I second that. (Even though I'm the negative example.)
+2013-07-23 15:13:36	Armageddon	but that's my own experience, other people might have other experiences
+2013-07-23 15:14:00	Armageddon	here's the sad part I found about the sessions and I told kushal about it
+2013-07-23 15:14:10	Armageddon	way back during the session
+2013-07-23 15:14:34	Armageddon	there was a lot of time lost on questions during the session, so much time lost that each session took me 5 minutes to study from the logs
+2013-07-23 15:14:51	Armageddon	there was 55 minutes of irrelevant questions that should've been googled
+2013-07-23 15:15:16	Armageddon	and after all kushal did from the beginning and all the time and effort that he put into this
+2013-07-23 15:15:16	kushal	hehe
+2013-07-23 15:15:22	Armageddon	I still see people doing the same mistakes
+2013-07-23 15:15:29	Armageddon	and that's disrespect to him
+2013-07-23 15:15:44	Armageddon	he should be offended by every single person that does the same mistake over and over again
+2013-07-23 15:16:08	Armageddon	but he's too nice of a person
+2013-07-23 15:16:22	dot|not	Which is even more ashaming for the rest.
+2013-07-23 15:16:23	Armageddon	that's why I know I can't be him and can't do what he did
+2013-07-23 15:16:24	sonam	kirk_iowa, please tell how to register myself in that online course of CS50?
+2013-07-23 15:17:03	dot|not	sonam, query him please. This is not part of the ongoing discussion.
+2013-07-23 15:17:18	kushal	sonam, discuss in private
+2013-07-23 15:17:19	Armageddon	if it wasn't for kushal and some of the new friends I made here and they know each other, I would've left a long time ago
+2013-07-23 15:17:25	Armageddon	I couldn't stand the sessions
+2013-07-23 15:17:33	kushal	Armageddon, I understand the pain
+2013-07-23 15:17:36	sonam	dot|not,kushal, sorry
+2013-07-23 15:17:40	kushal	s/I/ I can/
+2013-07-23 15:17:41	+batul	What kushal meant to say was: Armageddon,  I can understand the pain
+2013-07-23 15:17:44	Armageddon	I had to miss them on purpose, while being here and reading them after
+2013-07-23 15:18:34	Armageddon	I said this before to kushal and I'm saying it again now, but that's my personal view on things and poeple might like them or they might not
+2013-07-23 15:18:51	Armageddon	and btw, every single person in here is a better coder than I am
+2013-07-23 15:19:04	Armageddon	most of you are computer scientists, I'm not
+2013-07-23 15:19:12	dot|not	(Ignore the last two sentences.)
+2013-07-23 15:19:33	Armageddon	well, I meant in theory :p
+2013-07-23 15:19:44	Armageddon	in practice, things change
+2013-07-23 15:19:52	kushal	kirk_iowa, btw, about your point on more exercises , do you want them in the book ?
+2013-07-23 15:20:02	kushal	I mean in the Python book ?
+2013-07-23 15:20:17	kirk_iowa	sonam: http://cs50.tv/2012/fall/    In the upper right hand corner you can choose a course from 2012 (link give) , 2011, etc... choose and all lectures, assignments are there.
+2013-07-23 15:20:43	kirk_iowa	sonam: a good internet connection might be needed to download lecture videos, and things.
+2013-07-23 15:20:57	kushal	kirk_iowa, you can tell her those in pm too
+2013-07-23 15:21:12	kushal	http://docs.python.org/2/tutorial/ ---> Everyone should read that as a next thing
+2013-07-23 15:21:21	--	Mode #dgplug [+o kushal] by ChanServ
+2013-07-23 15:21:36	--	kushal has changed topic for #dgplug from "Welcome to Linux User's Group of Durgapur | Mailing list at  http://lists.dgplug.org/listinfo.cgi/users-dgplug.org | Old classes http://www.dgplug.org/irclogs/ | Good bye skvidal, R.I.P. | There will be no session today | Today's session has been postponed to 23/07/2013 7:00pm |" to "Welcome to Linux User's Group of Durgapur | Mailing list at  http://lists.dgplug.org/listinfo.cgi/users-dgplug.org | Old classes http://www.dgplug.org/irclogs/ | Good bye skvidal, R.I.P. | http://docs.python.org/2/tutorial/ |"
+2013-07-23 15:21:47	@kushal	Everyone read the tutorial
+2013-07-23 15:21:59	@kushal	kirk_iowa, any answer to my question ?
+2013-07-23 15:22:07	kirk_iowa	kushal: ^^ yes !
+2013-07-23 15:22:18	@kushal	:)
+2013-07-23 15:24:24	dot|not	Personal opinion on exercises: I've read a lot of books about programming languages in the last few years. And many of them gave you exercises like: "Peter has 3 apples, Paul has two apples and Mary has only one apple. Write a program that adds the amount of apples." - this is extremely boring and demotivating.
+2013-07-23 15:24:51	dot|not	So maybe, if it's possible, try to make them more complicated or funnier (Monty Python offers a great source for humor! :D).
+2013-07-23 15:25:07	dot|not	The best approach was, in my humble opinion, building a little project step by step.
+2013-07-23 15:25:09	dot|not	Just my two cents.
+2013-07-23 15:25:13	@kushal	dot|not, ok
+2013-07-23 15:25:21	kirk_iowa	dot|not: agreed.
+2013-07-23 15:25:32	@kushal	dot|not, that is the goal asay aorund 0.5 release of the book :)
+2013-07-23 15:26:07	dot|not	Great. :)
+2013-07-23 15:26:32	kirk_iowa	dot|not: kushal  i think Zed Shaw does this pretty well, while remaining humerous enough that the exercises aren't too tedious.
+2013-07-23 15:26:56	@kushal	kirk_iowa, yes, I liked his approach
+2013-07-23 15:27:04	dot|not	Oh yeah. Learn Python / Learn C the hard way are pretty cool.
+2013-07-23 15:27:14	kirk_iowa	^^ yes
+2013-07-23 15:28:51	kirk_iowa	I am actually do his side by side with this course, as it helps me (as I am new  and slow with Object Oriented programming)  :)
+2013-07-23 15:29:12	@kushal	kirk_iowa, ok :)
+2013-07-23 15:30:33	@kushal	dot|not, actually I wanted to see how people are reacting to the small problem we are giving as hometasks ?
+2013-07-23 15:30:44	@kushal	based on that I wanted to add a project details
+2013-07-23 15:32:54	dot|not	I'd say the reception has been pretty good overall. Most people seem to be happy with the given exercises.
+2013-07-23 15:33:01	 *	dot|not glances at the rest of the users in here.
+2013-07-23 15:33:29	@kushal	dot|not, I think many found them difficult
+2013-07-23 15:33:34	@kushal	and of course
+2013-07-23 15:34:02	dot|not	It's "difficult" versus "too difficult". The first one is not bad I'd say.
+2013-07-23 15:34:34	@kushal	who all said that the colleges started and they don't have time, I am not going to trust those line
+2013-07-23 15:34:37	@kushal	* lines
+2013-07-23 15:34:37	J_Caselles	difficult is/should be compeling
+2013-07-23 15:35:06	@kushal	though I was a student 8 years back but I still visit college hostels
+2013-07-23 15:35:17	anuragk	dot|not yes, they were not that difficult
+2013-07-23 15:35:17	@kushal	and I know how much time a student gets
+2013-07-23 15:35:25	@kushal	J_Caselles, dot|not :)
+2013-07-23 15:36:55	dot|not	Glad I'm not a student anymore. :P I never made a secret of me being less dedicated than I could possibly be. But being this I'd had to sacrifice a lot of things I'm not willing to sacrifice. So I took and take the most out of everything.
+2013-07-23 15:37:28	dot|not	And I'm fine with that so far. I don't thing I'm an annoyance for anyone. (If so, I'd be happily expelled / kickbanned. :))
+2013-07-23 15:37:48	Armageddon	dot|not, you are leave !
+2013-07-23 15:37:49	Armageddon	:p
+2013-07-23 15:38:07	 *	dot|not nods silently and leaves. :[
+2013-07-23 15:38:09	dot|not	:P
+2013-07-23 15:38:12	@kushal	dot|not, I don't think it was a problem :)
+2013-07-23 15:39:20	--	dastaan93_ is now known as altair
+2013-07-23 15:40:18	tenstormavi	kushal, now it is different here. Did you ever heard about prayers in the morning in college?? But now it is going in our college.
+2013-07-23 15:40:51	@kushal	tenstormavi, does not matter
+2013-07-23 15:41:02	@kushal	tenstormavi, you still have enough time
+2013-07-23 15:41:17	iam_sudip	yes it is true. we have enough time. if someone seriously give time to study even they have the time to do the assignments given here. I also think it is an excuse..
+2013-07-23 15:42:44	tenstormavi	And attendence is also compulsory, so we have to attend our classes till 5:30 pm.
+2013-07-23 15:42:58	@kushal	tenstormavi, and our session starts at 7pm
+2013-07-23 15:43:47	@kushal	tenstormavi, point is, if you want to attend, you will make your own time
+2013-07-23 15:44:02	Armageddon	for me, some of the sessions were at 7am
+2013-07-23 15:44:11	tenstormavi	kushal, i am not complaining about session. I just say we were given more time for home tasks.
+2013-07-23 15:44:12	Armageddon	and all the rest are at 9:30am
+2013-07-23 15:44:42	@kushal	Armageddon, correct :)
+2013-07-23 15:45:01	Armageddon	and I still attended
+2013-07-23 15:45:20	Armageddon	if you want to learn something, you have to sacrifice
+2013-07-23 15:45:22	kirk_iowa	Man that one was at 6:00 AM for me...
+2013-07-23 15:45:26	dot|not	You don't need sleep. Zombies have it easier.
+2013-07-23 15:45:32	dot|not	(@ Armageddon :P)
+2013-07-23 15:45:47	kirk_iowa	Stupid Time warner cable was out that morning though...
+2013-07-23 15:45:48	Armageddon	and for the home tasks, they didn't take much time
+2013-07-23 15:46:14	@kushal	I can understand points of having more steps given
+2013-07-23 15:46:15	iam_sudip	Armageddon: +1.
+2013-07-23 15:46:16	kirk_iowa	Armageddon: most... I struggle for a long time on one though. :)
+2013-07-23 15:46:17	Armageddon	took me an hour to do each, while contributing to the book, learning it, learning python, searching what I need to get the job done and writing the code
+2013-07-23 15:46:54	Armageddon	and took me 2 hours to nag to myself about commenting it :p
+2013-07-23 15:48:12	@kushal	anyway, another task
+2013-07-23 15:49:19	@kushal	use google.com to find out how to add package dependencies in your setup.py project
+2013-07-23 15:49:26	@kushal	s/project/file/
+2013-07-23 15:49:27	+batul	What kushal meant to say was: use google.com to find out how to add package dependencies in your setup.py file
+2013-07-23 15:50:10	@kushal	and create a new project, make that setup.py and other files properly, submit it to the test PyPI server (remember, the test server)
+2013-07-23 15:50:48	 *	kirk_iowa thinks, Oh No.
+2013-07-23 15:50:58	@kushal	and then submit a home task post with the link of the project in test PyPi
+2013-07-23 15:51:21	@kushal	title of the post: "dummy project"
+2013-07-23 15:51:26	@kushal	btw, missed one point
+2013-07-23 15:52:07	@kushal	in the dummy project, one should have a command myshell (remember that shell I asked to write few days back ?)
+2013-07-23 15:53:01	@kushal	remember to test the project using pip :)
+2013-07-23 15:53:05	@kushal	any questions ?
+2013-07-23 15:53:09	Armageddon	!
+2013-07-23 15:53:43	J_Caselles	!
+2013-07-23 15:54:47	@kushal	Armageddon, J_Caselles ask
+2013-07-23 15:54:50	Armageddon	what test server ?
+2013-07-23 15:54:57	@kushal	Armageddon, PyPi test server
+2013-07-23 15:55:30	@kushal	Armageddon, http://pymbook.readthedocs.org/en/latest/projectstructure.html#registering-your-project
+2013-07-23 15:55:34	J_Caselles	(I don't recall it either...)
+2013-07-23 15:55:52	@kushal	J_Caselles, ^^
+2013-07-23 15:56:08	J_Caselles	oh yes
+2013-07-23 15:56:22	@kushal	actually http://pymbook.readthedocs.org/en/latest/projectstructure.html#python-package-index-pypi
+2013-07-23 15:56:27	Armageddon	hmm, kool
+2013-07-23 15:56:39	@kushal	so everyone needs to do more searching this time
+2013-07-23 15:56:58	@kushal	as they have to find out few stuffs in setup.py which is not written in the book :)
+2013-07-23 15:57:16	anuragk	!
+2013-07-23 15:57:16	@kushal	you have 2 days for the submission :)
+2013-07-23 15:57:19	@kushal	anuragk, ask
+2013-07-23 15:58:00	@kushal	any more questions ?
+2013-07-23 15:58:10	elita15	!
+2013-07-23 15:58:49	anuragk	in the dummy project, one should have a command myshell" include that in 'dummy project'?
+2013-07-23 15:59:11	anuragk	which we wrote ?
+2013-07-23 16:00:07	@kushal	anuragk, yes, few days back
+2013-07-23 16:00:19	anuragk	ok.
+2013-07-23 16:00:20	@kushal	remember to rename the file myshell.py myshell
+2013-07-23 16:00:25	@kushal	remember to rename the file myshell.py to myshell
+2013-07-23 16:00:27	@kushal	elita15, ask
+2013-07-23 16:03:09	elita15	same doubt as anuragk. now cleared.
+2013-07-23 16:03:17	@kushal	anyway
+2013-07-23 16:03:18	@kushal	roll call
+2013-07-23 16:03:28	J_Caselles	Josep Caselles
+2013-07-23 16:03:28	anuragk	anurag kumar
+2013-07-23 16:03:31	sonam	Sonam
+2013-07-23 16:03:34	puspita	Puspita Ghosh
+2013-07-23 16:03:39	zishan	Sheesh Mohsin
+2013-07-23 16:03:40	tenstormavi	Avinash Kumar Dasoundhi
+2013-07-23 16:03:41	rashmi	Rashmi
+2013-07-23 16:03:42	devyani	Devyani
+2013-07-23 16:03:42	iam_sudip	iam_sudip:
+2013-07-23 16:03:43	m0rin09m`	Shungoh Kaetsu
+2013-07-23 16:03:51	elita15	elita lobo
+2013-07-23 16:03:54	shantanu	Shantanu Sarkar
+2013-07-23 16:04:00	rahulmishra	Rahul Mishra
+2013-07-23 16:04:12	amresh	amresh kumar
+2013-07-23 16:04:45	@kushal	---------SESSION ENDS------------
+2013-07-23 16:04:59	kirk_iowa	kirk gunderosn
+2013-07-23 16:05:03	rahulch	did I miss the roll call ?
+2013-07-23 16:05:07	kirk_iowa	kirk gunderson
+2013-07-23 16:05:15	rahulch	Rahul Chowdhury
+2013-07-23 16:05:16	manishjain2792	manish jain
+2013-07-23 16:05:48	avik	avik ghosh
+2013-07-23 16:07:16	elita15	kushal, i had emailed the code you asked to submit in the previous class.can you please tell if its correct?
+2013-07-23 16:07:55	Armageddon	I'm now known as 15
+2013-07-23 16:07:56	Armageddon	:p
+2013-07-23 16:08:44	@kushal	elita15, you should be able to tel if it is correct or not
+2013-07-23 16:09:43	elita15	kushal, seeing the output i thought it was right, but wanted  to be sure.
+2013-07-23 16:09:50	@kushal	:)
+2013-07-23 16:11:22	kavis_1	lavis khandelwal
+2013-07-23 16:11:40	 *	kavis_1 kavis
+2013-07-23 16:12:22	@kushal	btw, two links to read: www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html www.paulgraham.com/avg.html
+2013-07-23 16:13:48	@kushal	everyone tell me what you think after reading the first link
+2013-07-23 16:15:40	@kushal	btw, how many of you have pss installed in your system ?
+2013-07-23 16:17:16	rahulch	kushal, I do
+2013-07-23 16:18:16	tenstormavi	kushal, i do.
+2013-07-23 16:18:52	@kushal	ok :)
+2013-07-23 16:20:58	@kushal	in last one year I spoke 8k lines, in around a month Armageddon spoke 3k :)
+2013-07-23 16:21:35	Armageddon	lol
+2013-07-23 16:22:35	@kushal	anyone finished reading the link ?
+2013-07-23 16:24:25	elita15	kushal, in project structure it was said that the account details are stored in .pypirc file in home directory..are we supposed to create the file with the  given contents?
+2013-07-23 16:26:15	@kushal	elita15, this question proves that you never read that chapter before
+2013-07-23 16:26:34	@kushal	I thought I asked people to read that before
+2013-07-23 16:26:49	@kushal	not answering your question, sorry
+2013-07-23 16:29:50	@kushal	also read How to become a hacker -- http://www.catb.org/~esr/faqs/hacker-howto.html
+2013-07-23 16:31:30	@kushal	no body is replying :(
+2013-07-23 16:31:43	kirk_iowa	done with first one
+2013-07-23 16:31:54	@kushal	kirk_iowa, any comments ?
+2013-07-23 16:34:10	elita15	kushal, i did read the chapter but i could not find .pypirc file
+2013-07-23 16:34:28	kirk_iowa	i don't know if it is world wide, or just america.  But this is the trend in all fields in colleges.  The school believes it's true function is to preserve the school, not challenge students.  They want more and more students (more and more tuition dollars)... they don't care if the graduates can handle work in the real world or not.
+2013-07-23 16:34:48	@kushal	kirk_iowa, same everywhere
+2013-07-23 16:35:04	@kushal	kirk_iowa, like in India we just produce lots of people with CSE degrees
+2013-07-23 16:36:45	elita15	kushal, i am sorry i read the chapter the same day you told but was stuck at that point when i tried to follow the instructions.i shall read it again and figure out.
+2013-07-23 16:37:15	kirk_iowa	i took a course in college.  Chem 102B.  "Organic chemistry for the biology major".  After a test, the teacher would go throug th test, question by question.
+2013-07-23 16:38:12	kirk_iowa	If a big enough group (varied) of students answered a question wrong, and whined enough.  The teacher would allow the incorrect answer to be counted as correct.
+2013-07-23 16:39:36	kirk_iowa	I set the curve on those tests, before adjustments for incorrect answers.  And I dropped out at the end of the semester.  Man, I hate school.
+2013-07-23 16:41:34	kirk_iowa	Higher education is becoming nothing but a toll booth that you have no choice to pay the ever increasing toll.  Degrees are bought, not earned.
+2013-07-23 16:42:58	@kushal	in US one good thing may be about people getting in any school with money, but it is not sure that they will pass
+2013-07-23 16:44:07	kirk_iowa	kushal: depends on the school :)
+2013-07-23 16:44:08	@kushal	like in MIT
+2013-07-23 16:44:12	@kushal	kirk_iowa, yes
+2013-07-23 16:44:14	kirk_iowa	^^
+2013-07-23 16:44:24	Armageddon	anyone uses an iphone with linux ?
+2013-07-23 16:44:39	@kushal	not enough money to buy one :)
+2013-07-23 16:45:03	@kushal	though I have a second hand MBP, for my photo work
+2013-07-23 16:50:10	@kushal	pingall: Any one else finished any of the links ?
+2013-07-23 16:50:11	+ekan0ra	Christi123, umesh, StarOnD, iam_sudip, manishjain2792, amresh, devmodem, rahulch, fossterer, cyogesh, elita15, subho, souradeep, elita15_, rahulmishra, praveenkumar, @kushal, shantanu, avik, mac1733, kirk_iowa, anuragk, tenstormavi, Shrink, bibhas, piotrektt, J_Caselles, chandankumar, JCas_ser1, Armageddon, m0rin09m`, ralsina_, +batul, abadger1999, +ekan0ra, @ChanServ,
+2013-07-23 16:50:11	+ekan0ra	kdas_
+2013-07-23 16:50:11	+ekan0ra	any one else finished any of the links ?
+2013-07-23 16:50:17	kirk_iowa	Armageddon: only used androids myself
+2013-07-23 16:50:26	Armageddon	yea me too, kirk_iowa
+2013-07-23 16:50:36	Armageddon	kushal, I read half way through the first one
+2013-07-23 16:51:48	rahulch	kushal, I was planning on reading them after dinner :)
+2013-07-23 16:51:57	kirk_iowa	kushal: patience.... :) working on it.
+2013-07-23 16:52:16	@kushal	kirk_iowa, :)
+2013-07-23 17:01:19	Armageddon	kushal, I agree with the first article
+2013-07-23 17:01:26	@kushal	ok
+2013-07-23 17:03:17	 *	rahulch goes for dinner
+2013-07-23 17:03:58	Armageddon	and I don't totally agree with the second guy
+2013-07-23 17:04:02	Armageddon	let me explain why
+2013-07-23 17:04:18	Armageddon	when I talked to you about python using pointers and you said no it doesn't
+2013-07-23 17:04:30	Armageddon	in reality, a = b is pointing a to the address of
+2013-07-23 17:04:32	Armageddon	b
+2013-07-23 17:05:13	Armageddon	yes, on the upper level of the language, there are no pointers but in reality and under the hood that's all it's doing it's *a = b or a = &b
+2013-07-23 17:06:21	Armageddon	you might not use or want to use a language like C for major coding for example or in a business BUT it doesn't mean that what C taught you will not affect your style of coding and way of thinking
+2013-07-23 17:06:49	Armageddon	so yes, some languages make you a better coder, less lazy, etc... even thought you might not use them or want to use them
+2013-07-23 17:07:38	piotrektt	hey all. sorry for being late.
+2013-07-23 17:08:19	piotrektt	oh session is over :P - btw. is second session today?
+2013-07-23 17:08:27	Armageddon	piotrektt, don't worry, you were only 2 hours late
+2013-07-23 17:08:47	piotrektt	hehe :)
+2013-07-23 17:08:53	Armageddon	:p
+2013-07-23 17:08:55	@kushal	Armageddon, pointers is not a language feature
+2013-07-23 17:09:04	piotrektt	i had the chat on, but couldn't attend :(
+2013-07-23 17:09:19	Armageddon	kushal, you're missing the point :p
+2013-07-23 17:09:53	Armageddon	by simply knowing that a = b is assigning the pointer a to the address of b explains everything to me
+2013-07-23 17:10:21	Armageddon	and I'm talking under the hood, NOT on the higher language level
+2013-07-23 17:10:33	@kushal	Armageddon, :)
+2013-07-23 17:10:56	Armageddon	I made that mistake in a code and I was having the same output twice
+2013-07-23 17:11:00	Armageddon	I did a = b = 0
+2013-07-23 17:11:06	Armageddon	which I used to do in other langauges
+2013-07-23 17:11:14	Armageddon	then when I had the same output for a and b
+2013-07-23 17:11:28	Armageddon	I thought of it as pointers, everything unraveled
+2013-07-23 17:15:46	kirk_iowa	finished lisp artice (read hacker article a couple years ago)
+2013-07-23 17:15:51	kirk_iowa	finished lisp article (read hacker article a couple years ago)
+2013-07-23 17:19:00	@kushal	kirk_iowa, ok
+2013-07-23 17:19:45	@kushal	kirk_iowa, any comments
+2013-07-23 17:19:52	@kushal	Armageddon, I understood your problem
+2013-07-23 17:21:23	kirk_iowa	my brother wants me to read a book about lisp.  Can't find the title (he thinks lisp might be something i would be interested in)....
+2013-07-23 17:21:39	 *	kirk_iowa needs more organization
+2013-07-23 17:23:50	 *	kirk_iowa gives up looking through old emails...
+2013-07-23 17:25:25	kirk_iowa	anyway.  he is at work, so it might be a while before he responds to me.
+2013-07-23 17:26:27	@kushal	kirk_iowa, there are few awesome books
+2013-07-23 17:26:37	kirk_iowa	he thinks that for some reason that lisp might be good match for me.  as I am not experienced with any language really.
+2013-07-23 17:27:08	@kushal	kirk_iowa, then it should be
+2013-07-23 17:27:17	@kushal	http://landoflisp.com/ is the funniest way to learn the language
+2013-07-23 17:27:23	kirk_iowa	but the article kind of highlights what he told me.  It isn't widely used, is very unique, and very powerful.
+2013-07-23 17:27:58	@kushal	kirk_iowa, yes and you can use the ideas in other places
+2013-07-23 17:28:06	@kushal	like what I try to do in my python code
+2013-07-23 17:29:45	kirk_iowa	one other problem with lisp though.
+2013-07-23 17:30:04	kirk_iowa	no courses on #dgplug.
+2013-07-23 17:31:02	rockworldmi	hi
+2013-07-23 17:31:40	@kushal	kirk_iowa, hehe
+2013-07-23 17:31:48	@kushal	kirk_iowa, buy and read that book
+2013-07-23 17:31:52	@kushal	more than enough
+2013-07-23 17:32:02	@kushal	and then you can go to other bigger books
+2013-07-23 17:33:35	kirk_iowa	kushal: will first try the library (i need to get a library card in Charlotte anyway... this is a good excuse to go)
+2013-07-23 17:36:06	 *	kirk_iowa is going to start reading about packaging python right now though.
+2013-07-23 17:45:07	kirk_iowa	kushal: still there ?
+2013-07-23 17:46:10	@kushal	yes
+2013-07-23 17:47:03	kirk_iowa	kushal: nevermind.  i will just experiment, and see if i answer my own question.  :) thanks.
+2013-07-23 17:47:11	@kushal	kirk_iowa, :)
+2013-07-23 18:23:16	 *	kirk_iowa celebrates the existence factorial_kirk on PyPI
