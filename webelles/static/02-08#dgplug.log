@@ -1,0 +1,317 @@
+2013-08-01 06:07:14	christi123	praveenkumar, do you have any idea about sockets in python
+2013-08-01 06:08:45	praveenkumar	christi123, http://docs.python.org/2/howto/sockets.html and http://www.tutorialspoint.com/python/python_networking.htm, long back I wrote server stuff using python.
+2013-08-01 06:09:47	christi123	praveenkumar, I wrote a python program  to ping a remote machine it shows only one machine is alive while all others are working.
+2013-08-01 06:09:57	christi123	I will just paste the link
+2013-08-01 06:11:44	christi123	praveenkumar, http://fpaste.org/29395/33709137/
+2013-08-01 06:11:52	praveenkumar	christi123, https://bitbucket.org/kumarpraveen/lsync/overview this is what I tried long back.
+2013-08-01 06:14:18	christi123	praveenkumar, i will check
+2013-08-01 06:14:19	praveenkumar	christi123, check after increasing timeout because sometime due to network delay it may not able to ping
+2013-08-01 09:51:19	christi123	hi kushal, I am working with sockets. Port number 80 is defined for web servers. What should i specify as the port number when i connect any other remote machine
+2013-08-01 09:52:00	kushal	christi123, depends on that remote machine's port you want to connect
+2013-08-01 09:54:09	christi123	kushal, I am trying to ping all the machines in my office by giving IP address as the input and the port number as 135. but it is showing only one machine as alive. but all of them are on.
+2013-08-01 09:54:37	kushal	christi123, may be they are blocking ping
+2013-08-01 09:55:24	christi123	kushal, does a firewall serve that purpose. Like is the firewall responsible for blocking
+2013-08-01 09:55:35	kushal	may be
+2013-08-01 09:55:37	dot|not	Could be.
+2013-08-01 09:55:43	dot|not	Dang, kushal was faster.
+2013-08-01 09:55:44	dot|not	:D
+2013-08-01 09:56:10	kushal	dot|not, :D
+2013-08-01 09:56:15	kushal	christi123, http://www.g-loaded.eu/2009/10/30/python-ping/
+2013-08-01 09:56:20	christi123	kushal, dot|not, ok Thankyou
+2013-08-01 09:56:50	dot|not	I still find it disturbing that some administrators block ICMP Echo-Requests for security reasons..
+2013-08-01 11:34:55	christi123	how to disable  firewall on fedora18
+2013-08-01 11:36:42	kushal	christi123, type the same question on google.com
+2013-08-01 11:37:21	christi123	kushal, I tried it out. http://www.cyberciti.biz/faq/turn-on-turn-off-firewall-in-linux/
+2013-08-01 11:37:29	kushal	same here
+2013-08-01 11:37:33	kushal	service iptables top
+2013-08-01 11:37:36	kushal	stop
+2013-08-01 11:37:50	christi123	But when i executed it said no no file or directory
+2013-08-01 11:41:23	kushal	show us
+2013-08-01 11:41:26	kushal	fpaste
+2013-08-01 11:42:54	praveenkumar	christi123, check "systemctl stop iptables.service" even "service iptables stop" also work as kushal pointed out.
+2013-08-01 11:43:23	christi123	kushal, praveenkumar Thanks it worked
+2013-08-01 11:44:26	praveenkumar	christi123, one question, why you want to stop firewall (iptable service)?
+2013-08-01 11:45:44	dot|not	Because the knowledge to modify rules accordingly is missing. *SCNR*
+2013-08-01 11:46:18	christi123	praveenkumar, actually my socket program isn't working on some machines. i.e i am not able to connect to them hence i am trying to disable the firewall and try running it
+2013-08-01 11:47:58	amresh	dot|not: what is *scnr* ? (scnr :P)
+2013-08-01 11:48:50	praveenkumar	christi123, you can add a particular port to firewall so that it will go through, instead of disabling it.
+2013-08-01 11:49:21	christi123	praveenkumar, ok i will try that too
+2013-08-01 11:49:30	praveenkumar	ok
+2013-08-01 11:49:48	dot|not	Even though it does not really make a difference for desktop machines ..
+2013-08-01 11:53:41	christi123	kushal, It worked thanks :)
+2013-08-01 12:24:42	J_Caselles	hi
+2013-08-01 12:24:57	J_Caselles	kushal: I'm about to finish dup_images, but I'm stuck
+2013-08-01 12:25:11	kushal	J_Caselles, what happened ?
+2013-08-01 12:25:25	J_Caselles	I know it was not asked, but I want to implement recursive option as others have, I find it nice option
+2013-08-01 12:26:59	J_Caselles	but then I can't figure how to mix this which having more t'han one folder searced recursively and check that the user doesn't do "dup_images -R /home/me/pics /home/me/pics/ofme"
+2013-08-01 12:27:46	J_Caselles	how to avoid searching a dir if it is a child of another one
+2013-08-01 12:28:10	J_Caselles	Maybe I'm just sick of thinking :/
+2013-08-01 12:28:33	J_Caselles	I may post without recursive and add it to the TODO list :D
+2013-08-01 12:32:31	praveenkumar	J_Caselles, I think initially you can do without recursive option. but if you want to do a recursive option then os.walk will give a tuple which contain path, dir and files for a given directory
+2013-08-01 12:32:42	amresh	J_Caselles: when you do a recursive search, and prepare a list of jpg file. you can store absolute addresses. which will enable you to find duplicate entries in that list. so you can remove this problem.
+2013-08-01 12:33:31	praveenkumar	amresh, here absolute address mean absolute path right?
+2013-08-01 12:33:50	amresh	praveenkumar: yes with ref. to /
+2013-08-01 12:34:12	praveenkumar	yes right.
+2013-08-01 12:34:39	amresh	J_Caselles: i must have tried this as well :(
+2013-08-01 12:34:55	praveenkumar	amresh, so here we are only considering .jpg extension what about .png and .gif ..etc.
+2013-08-01 12:35:30	amresh	praveenkumar: kushal asked for jpg only.
+2013-08-01 12:35:38	praveenkumar	ok
+2013-08-01 12:36:28	kushal	oh while giving the question I should have mentioned that a/b means all directories under b :)
+2013-08-01 12:36:35	kushal	 /home/kushal/pics
+2013-08-01 12:36:46	kushal	   ^^^^^^^ will contain all directories
+2013-08-01 12:37:16	praveenkumar	kushal, great, so now I also have to change my code :)
+2013-08-01 13:01:09	m0rin09m`	who is rahulc93? it's good to learn how to construct nesting loop in python way.
+2013-08-01 13:04:31	m0rin09m`	Armageddon: thanks for showing us cool features of python. e.g. with statement, lambda function, generator, etc...
+2013-08-01 13:04:52	m0rin09m`	good to know
+2013-08-01 13:05:05	J_Caselles	sorry sorry thank you all, I'll read you nice comments in a moment!!
+2013-08-01 13:11:47	J_Caselles	ok guys
+2013-08-01 13:13:28	J_Caselles	well, actually I thought I had solved the problem with listdir(set(listofdirs)) (I'm using listdir for a reason, dont ask :D)
+2013-08-01 13:14:10	J_Caselles	but somehow /home/me/pics != /home/me/pics
+2013-08-01 13:19:02	m0rin09m`	J_Caselles: it seems you are having a fun. keep it up!
+2013-08-01 13:33:15	J_Caselles	it's a pity I don't have time to review other's code :/
+2013-08-01 13:33:31	praveenkumar	iam_sudip, ping
+2013-08-01 13:35:14	J_Caselles	btw, I'm prowd of me using setdefault, easy way to check for duplicates :D
+2013-08-01 13:35:51	iam_sudip	praveenkumar: o_O?
+2013-08-01 13:36:32	J_Caselles	and I have stick to the plan, if there's no exif, there's no image :P
+2013-08-01 13:36:54	J_Caselles	see you later!! have a nice session, I can't attend
+2013-08-01 13:37:03	kushal	J_Caselles, bye :)
+2013-08-01 13:38:02	praveenkumar	iam_sudip, you used messy stuff in your code, like instead of key, value you used pair and then pair[1] :) which will contain value right?
+2013-08-01 13:38:57	kushal	we should do sessions on clean code
+2013-08-01 13:39:06	kushal	but only after 2 weeks
+2013-08-01 13:39:13	kushal	see you all at 7
+2013-08-01 13:39:45	iam_sudip	praveenkumar: yes. you are right.
+2013-08-01 13:40:25	iam_sudip	It will contain the hash generated previously for each file. corresponding to pair[0] is the name of the file.
+2013-08-01 13:42:55	iam_sudip	i found pair is good cause this 'pair' i wanted to mean that i am retrieving one file and hash and doing the checking.
+2013-08-01 13:43:46	iam_sudip	honestly i found kinda same code in stackoverflow and i liked it for this purpose, so i used.
+2013-08-01 13:44:04	iam_sudip	btw, the code is good? praveenkumar ?
+2013-08-01 13:45:54	praveenkumar	iam_sudip, I found some fault in logic also, just think instead of using absolute file path as a key you could have use md5sum value as a key and whenever other file which have same md5sum occur you could have tell directly there it's duplicate
+2013-08-01 13:46:48	praveenkumar	iam_sudip, now you are making a another dict for storing same md5sum files in list and then printing.
+2013-08-01 13:47:15	iam_sudip	praveenkumar: no
+2013-08-01 13:47:35	iam_sudip	the other dictionary will contain the hash as key
+2013-08-01 13:47:46	iam_sudip	and the list of duplicates as value
+2013-08-01 13:48:37	iam_sudip	first dictionary was the simple one that have key=file, value=hash
+2013-08-01 13:49:36	iam_sudip	so in the new dictionary(as arranged_data) there will be no same hash value.
+2013-08-01 13:50:13	praveenkumar	iam_sudip, yes what I want to say even from first time only you can do that no need to create arrange_data dict.
+2013-08-01 13:51:25	iam_sudip	oh! yes. then the coding will be less. (y)
+2013-08-01 13:51:38	praveenkumar	something like "if !data[hashlib.md5(open(str(path_to_file)).read()).hexdigest()] then store file path as value
+2013-08-01 13:51:45	praveenkumar	correct
+2013-08-01 13:52:30	iam_sudip	yes. understood. :)
+2013-08-01 13:52:46	praveenkumar	great.
+2013-08-01 13:53:32	iam_sudip	praveenkumar: thanks for review.
+2013-08-01 13:53:45	praveenkumar	welcome
+2013-08-01 14:04:56	praveenkumar	kavis_1, ping
+2013-08-01 14:05:03	--	rahulch_ is now known as rahulch
+2013-08-01 14:05:28	kavis_1	praveenkumar, pong
+2013-08-01 14:07:40	praveenkumar	kavis_1, in check_for_duplicate() function, don't you think even same image is compared by itself?
+2013-08-01 14:10:05	kavis_1	praveenkumar, in if ((n[1] == x[1] and n[0] != x[0]) or (n[1] != x[1]))  i have check the name of the file if n[1] != x[1] then only the file is duplicate
+2013-08-01 14:10:09	kavis_1	:)
+2013-08-01 14:10:52	dot|not	Code in IRC is unbelievably ugly.
+2013-08-01 14:10:56	kavis_1	list n contain name of image file and its location at index 1 and 0 and same with x
+2013-08-01 14:11:52	praveenkumar	kavis_1, yes but still you are executing some part of the function without any desire stuff.
+2013-08-01 14:12:48	praveenkumar	kavis_1, ok, have to go home, ping you later.
+2013-08-01 14:15:21	kavis_1	praveenkumar, i was trying to remove the file from list that caught duplicate but it is of use for next directory because same name file can reside in other directories
+2013-08-01 14:15:38	kavis_1	praveenkumar, ah ok :)
+2013-08-01 14:29:04	praveenkumar	kavis_1, you didn't push your code change to github?
+2013-08-01 14:29:28	kavis_1	praveenkumar, i did
+2013-08-01 14:29:29	praveenkumar	kavis_1, I didn't see git url in blog post, may be you missed it
+2013-08-01 14:29:43	praveenkumar	to mention it there
+2013-08-01 14:29:49	kavis_1	praveenkumar, hmm
+2013-08-01 14:29:59	kavis_1	praveenkumar, missed
+2013-08-01 14:30:09	praveenkumar	alright
+2013-08-01 14:31:20	praveenkumar	kavis_1, I don't know why you used "os.path.join(r,files)" in search method because you didn't use it anywhere
+2013-08-01 14:33:21	kavis_1	praveenkumar, sorry i forget to remove it i was doing alot of experiments thats why :)
+2013-08-01 14:33:32	kavis_1	praveenkumar, it is of no use
+2013-08-01 14:33:43	praveenkumar	that's ok
+2013-08-01 14:35:18	praveenkumar	kavis_1, now come to check_for_duplicate function, what you think a best way to avoid unnecessary code run without changing the logic?
+2013-08-01 14:35:47	praveenkumar	kavis_1, take your time, I also need to think :)
+2013-08-01 14:37:37	kavis_1	praveenkumar,  by removing that file which already caught duplicate from the list x , i think
+2013-08-01 14:40:07	praveenkumar	kavis_1, don't you think there may be more that 2 file which are duplicate and if you remove when first duplicate occur then how you handle other one?
+2013-08-01 14:41:41	praveenkumar	kirk_iowa ping, are you iowabeakster?
+2013-08-01 14:42:35	praveenkumar	who is iowabeakster?
+2013-08-01 14:43:25	kushal	sorry for being late
+2013-08-01 14:43:27	kushal	now we have only 40 nicks in the channel
+2013-08-01 14:43:29	kushal	praveenkumar, kirk_iowa
+2013-08-01 14:43:31	kushal	:)
+2013-08-01 14:43:49	kirk_iowa	yes
+2013-08-01 14:44:00	kirk_iowa	sorry was getting coffee
+2013-08-01 14:44:18	kirk_iowa	praveenkumar: yes i am
+2013-08-01 14:44:24	kushal	lets do a roll call
+2013-08-01 14:44:29	praveenkumar	kirk_iowa, ok you should take care of your comments,
+2013-08-01 14:44:30	kushal	---------SESSION STARTS----------
+2013-08-01 14:44:33	iam_sudip	iam_sudip:
+2013-08-01 14:44:37	amresh	Amresh Kumar
+2013-08-01 14:44:38	devyani	Devyani
+2013-08-01 14:44:40	zishan	Sheesh Mohsin
+2013-08-01 14:44:42	anuragk	anurag kumar
+2013-08-01 14:44:43	rahulch	Rahul Chowdhury
+2013-08-01 14:44:48	prikotiyal	Priyanka Kotiyal
+2013-08-01 14:44:52	rashmi	Rashmi
+2013-08-01 14:44:53	christi123	christina Beemer
+2013-08-01 14:44:54	m0rin09m`	Shungoh Kaetsu
+2013-08-01 14:44:58	kavis_1	praveenkumar, can be then it will match with one and remove it from one list i.e x and again it go according to algorithim
+2013-08-01 14:45:03	kavis_1	kavis khandelwal
+2013-08-01 14:45:19	praveenkumar	kavis_1, will discuss after session
+2013-08-01 14:45:20	kirk_iowa	kirk gunderson
+2013-08-01 14:45:57	kushal	ok
+2013-08-01 14:45:57	sonam	sonam
+2013-08-01 14:45:58	kavis_1	praveenkumar, :)
+2013-08-01 14:47:37	kushal	so, for the next two weeks
+2013-08-01 14:47:45	kushal	we build a small web app
+2013-08-01 14:48:00	kushal	we will start small and then slowly go over
+2013-08-01 14:49:32	kushal	we will use flask
+2013-08-01 14:49:42	kushal	if anyone missed, he/she can read http://pymbook.readthedocs.org/en/latest/flask.html as a start
+2013-08-01 14:50:30	kushal	now the first task
+2013-08-01 14:51:19	kushal	everyone, create a new directory in their git, call it logviewer
+2013-08-01 14:52:42	kushal	in the index page (/) of the app, it will show different available logs, to start just show by log names
+2013-08-01 14:52:45	shantanu	Shantanu Sarkar
+2013-08-01 14:53:11	kushal	by clicking the log name, it will open a new page which will show the log
+2013-08-01 14:53:25	kushal	so the urls will look like
+2013-08-01 14:54:47	kushal	http://localhost:8000/ -- > will show all logs
+2013-08-01 14:55:14	kushal	http://localhost:8000/log/id_of_the_log --> will show the actual log
+2013-08-01 14:55:55	kushal	in the source directory, create a directory called "posts"
+2013-08-01 14:56:18	kushal	and inside keep some training logs
+2013-08-01 14:56:45	kushal	point to remember: logs should be kept not just as plain text file
+2013-08-01 14:57:19	kushal	but something like a json file, where you can store, log name, date-time, full log text etc
+2013-08-01 14:57:34	kirk_iowa	!
+2013-08-01 14:57:36	kushal	kirk_iowa, ask
+2013-08-01 14:58:30	kirk_iowa	my logs (say of #dgplug channel) are one continuous file.  is that a problem?  do i need to break it up into daily pieces, for example ?
+2013-08-01 14:59:16	kushal	kirk_iowa, break it up, this is just home task so not have to be full classes, but just first 20-50 lines from each class
+2013-08-01 14:59:24	kushal	kirk_iowa, or you can just download them from dgplug site
+2013-08-01 14:59:33	kushal	it can be any year
+2013-08-01 14:59:40	kirk_iowa	ok
+2013-08-01 15:03:07	kushal	http://paste.fedoraproject.org/29482/ shows one way to store data
+2013-08-01 15:04:19	kushal	so, you have to design the store of data first
+2013-08-01 15:04:38	kushal	and then write some script/something to save some data in the store
+2013-08-01 15:04:48	kushal	and then start working on the web app
+2013-08-01 15:05:05	kushal	and you should discuss your ideas with others here
+2013-08-01 15:05:49	kushal	now any question ?
+2013-08-01 15:06:24	kushal	it is always better to write a separate module which will handle saving of data
+2013-08-01 15:07:35	kushal	any question on the given problem ?
+2013-08-01 15:07:38	kushal	anyone ?
+2013-08-01 15:08:25	amresh	kushal: !
+2013-08-01 15:08:30	kushal	amresh, ask
+2013-08-01 15:08:39	amresh	kushal: how many days for this ?
+2013-08-01 15:09:21	kushal	amresh, we will do the full app in around 2 weeks
+2013-08-01 15:09:51	kushal	amresh, coming Monday I will give next set of features on this app
+2013-08-01 15:10:02	kushal	so one should be ready by then
+2013-08-01 15:10:28	kushal	btw, after 15th we will do sessions on code reviews
+2013-08-01 15:10:31	kushal	formally :)
+2013-08-01 15:10:57	 *	kushal thanks praveenkumar for doing great reviews :)
+2013-08-01 15:11:12	amresh	kushal: ok
+2013-08-01 15:11:14	iam_sudip	kushal: it is good.
+2013-08-01 15:11:27	kushal	btw, you don't have to submit any code
+2013-08-01 15:11:37	kirk_iowa	!
+2013-08-01 15:11:40	kushal	rather do not submit any code
+2013-08-01 15:11:45	kushal	just push to your github
+2013-08-01 15:11:47	kushal	kirk_iowa, ask
+2013-08-01 15:11:52	christi123	!
+2013-08-01 15:12:14	kushal	christi123, ask
+2013-08-01 15:12:20	kirk_iowa	in your example i do no understand "'text':'<a>: Hello\n<b>: Bye'", what is it that this represents ?
+2013-08-01 15:12:21	christi123	Are you talking about the present assignment or the previous ones
+2013-08-01 15:12:37	christi123	That do not submit
+2013-08-01 15:12:41	 *	praveenkumar says kushal: welcome, btw I am also learning stuff from different members code.
+2013-08-01 15:12:58	kushal	christi123, present one, today's
+2013-08-01 15:13:06	kushal	kirk_iowa, that is the actual log
+2013-08-01 15:13:11	christi123	kushal, ok thanks
+2013-08-01 15:13:16	kushal	kirk_iowa, a said Hello, b said bye :p
+2013-08-01 15:13:30	kirk_iowa	ok
+2013-08-01 15:13:50	anuragk	!
+2013-08-01 15:13:55	kushal	kirk_iowa, logs can be a dictionary
+2013-08-01 15:14:09	kushal	anuragk, ask
+2013-08-01 15:14:34	anuragk	you have to design the store of data : what is the store here?
+2013-08-01 15:14:39	kirk_iowa	:) i see... i am starting to understand why dictionaries are so popular with the python crowd.
+2013-08-01 15:15:26	kushal	anuragk, store means where you will keep the all data
+2013-08-01 15:16:20	anuragk	the json file ?
+2013-08-01 15:17:35	praveenkumar	anuragk, to a json file
+2013-08-01 15:19:13	anuragk	ok
+2013-08-01 15:19:45	kushal	---------SESSION ENDS----------
+2013-08-01 15:19:48	kushal	speak freely
+2013-08-01 15:20:11	 *	praveenkumar goes for dinner :)
+2013-08-01 15:20:26	rahulch	kushal, when will we be getting projects?
+2013-08-01 15:20:45	amresh	rahulch: this is a project :)
+2013-08-01 15:20:48	kushal	rahulch, what you think today's problem ?
+2013-08-01 15:20:57	rahulch	kushal, okay :)
+2013-08-01 15:21:02	kushal	not a political rally at least
+2013-08-01 15:21:20	praveenkumar	:)
+2013-08-01 15:22:27	kirk_iowa	kushal: should our "log storing script" be somtething that is fully automated ?
+2013-08-01 15:23:59	kushal	kirk_iowa, nah
+2013-08-01 15:24:18	kushal	kirk_iowa, say a module and then command which uses that module to add a new log to the json store
+2013-08-01 15:25:50	 *	kirk_iowa thinks that sounds easier ^^
+2013-08-01 15:26:35	amresh	kushal: won't it be easy to create a json file manually ? just a matter of few brackets !!
+2013-08-01 15:27:46	kushal	amresh, no, think about a json file which is 10MB or 100MB :)
+2013-08-01 15:29:26	amresh	kushal: so we use python mostly for automation work, right ?
+2013-08-01 15:29:56	amresh	in problems where nothing else can come up as a quick-fix :)
+2013-08-01 15:30:26	kirk_iowa	amresh: or imagine you are creating an web app that might store thousands of small logs ?  it might be nice to create many at once ?
+2013-08-01 15:31:39	amresh	kirk_iowa: :) again a quick-fix to automation issue
+2013-08-01 15:34:44	elita15	kushal,for the hometask  do we only need to create a json store having some logs using the given method?
+2013-08-01 15:35:33	kushal	elita15, no, you have to write code also
+2013-08-01 15:35:59	 *	amresh leaves for home
+2013-08-01 15:39:29	elita15	kushal, can you please tell what do we have to write the code? is it for creating a json store using the given method and displaying each log?
+2013-08-01 15:40:21	kushal	elita15, I already told
+2013-08-01 15:40:29	kushal	someone else please help elita15
+2013-08-01 15:41:10	elita15	kushal, okay  i'll find out, actually i had lost connection.
+2013-08-01 15:41:54	kushal	elita15, ok
+2013-08-01 19:43:46	--	Mode #dgplug [+o kushal] by ChanServ
+2013-08-01 19:44:12	--	kushal has changed topic for #dgplug from "Welcome to Linux User's Group of Durgapur | Mailing list at  http://lists.dgplug.org/listinfo.cgi/users-dgplug.org | Old classes http://www.dgplug.org/irclogs/ | Good bye skvidal, R.I.P. | http://docs.python.org/2/tutorial/ |" to "Welcome to Linux User's Group of Durgapur | Mailing list at  http://lists.dgplug.org/listinfo.cgi/users-dgplug.org | Old classes http://www.dgplug.org/irclogs/ | Good bye skvidal, R.I.P. | http://docs.python.org/2/tutorial/ | Happy Birthday rtnpro |"
+2013-08-01 23:02:49	J_Caselles	Armageddon ping
+2013-08-01 23:12:45	J_Caselles	m0rin09m` ping
+2013-08-01 23:31:49	Armageddon	J_Caselles, pong
+2013-08-01 23:36:59	J_Caselles	how are you?
+2013-08-01 23:37:11	J_Caselles	you are not talking much lately
+2013-08-01 23:41:05	J_Caselles	kavish never read PEP8 :/
+2013-08-01 23:43:08	Armageddon	who's kavish ?
+2013-08-01 23:43:10	J_Caselles	well, it doesn't even run, has typo
+2013-08-01 23:43:15	Armageddon	btw I've had a lot of beers
+2013-08-01 23:43:18	Armageddon	so I'm not 100% with you :p
+2013-08-01 23:43:21	J_Caselles	hahahaha
+2013-08-01 23:43:23	J_Caselles	good for you
+2013-08-01 23:43:40	Armageddon	I've been drinking since 1opm
+2013-08-01 23:43:43	Armageddon	1pm*
+2013-08-01 23:43:49	J_Caselles	oh man
+2013-08-01 23:43:49	Armageddon	it's 7 now :p
+2013-08-01 23:44:04	J_Caselles	and why is that?
+2013-08-01 23:44:41	Armageddon	cause I'm celebrating :D
+2013-08-01 23:44:45	Armageddon	and cause why not
+2013-08-01 23:44:56	J_Caselles	celebrating what?
+2013-08-01 23:46:23	J_Caselles	lol
+2013-08-01 23:47:20	J_Caselles	kavisk was telling me how to use os.walk... but his code (even the one at github) doesn't even run :D
+2013-08-01 23:48:27	Armageddon	how about mine ?
+2013-08-01 23:48:35	J_Caselles	I'm not arrived yet
+2013-08-01 23:48:41	J_Caselles	kirk's is also wrong
+2013-08-01 23:48:49	Armageddon	mine works awesomly
+2013-08-01 23:48:57	J_Caselles	will find **every** file duplicate :D
+2013-08-01 23:48:59	Armageddon	os.walk here's what it does
+2013-08-01 23:49:11	Armageddon	it gives you a list of lists of 3 tuples
+2013-08-01 23:49:11	J_Caselles	no, I now
+2013-08-01 23:49:18	J_Caselles	don't explain again please
+2013-08-01 23:49:19	J_Caselles	haha
+2013-08-01 23:49:21	Armageddon	the first is the path to the directly
+2013-08-01 23:49:34	Armageddon	the second is what directories are there in the current directory
+2013-08-01 23:49:37	Armageddon	and the third are the files
+2013-08-01 23:49:39	Armageddon	that's it
+2013-08-01 23:50:04	J_Caselles	I knew before also, I asked a completely different question, he thought explaining os.walk was the answer :D
+2013-08-01 23:50:19	Armageddon	what was the question?
+2013-08-01 23:50:25	Armageddon	I might be able to answer it
+2013-08-01 23:51:29	J_Caselles	not really a question, I wanted to use --recursive option, but was searching for a way of prevent the user searching recursively a parent and a child of this parent:
+2013-08-01 23:51:43	J_Caselles	dup_images /home/me /home/me/myself
+2013-08-01 23:53:10	Armageddon	I don't like recursive functions
+2013-08-01 23:53:19	Armageddon	I tend to use them as less as possible, they are bad practice
+2013-08-01 23:53:46	J_Caselles	well, in this case seemed like a nice option to have
+2013-08-01 23:53:56	Armageddon	not really
+2013-08-01 23:54:11	Armageddon	they are a nice option to have in a limited number of iterations
+2013-08-01 23:54:19	Armageddon	in this case, you don't know how many files there are/will be
+2013-08-01 23:54:36	Armageddon	if you have let's say a 1000 good luck trying to crunch those, you'll get a buffer overflow
+2013-08-01 23:55:47	Armageddon	actually stack overflow
+2013-08-01 23:57:20	J_Caselles	haha
+2013-08-01 23:57:23	J_Caselles	weeell
+2013-08-01 23:57:43	J_Caselles	at least one code that "works": m0rin09m`
+2013-08-01 23:58:10	Armageddon	J_Caselles, that's why I didn't use a recursive
+2013-08-01 23:58:21	Armageddon	you use a recursive with a very limited parameters
+2013-08-01 23:58:24	J_Caselles	but it's output could be better, because only finds duplicate pairs
+2013-08-01 23:58:54	J_Caselles	Armageddon: actually I've quit of recursive option, haven't implement it :D
+2013-08-01 23:59:02	Armageddon	no I'm explaining why
+2013-08-01 23:59:13	Armageddon	I could've used it, if I wanted to but I didn't for this reason
+2013-08-01 23:59:22	Armageddon	I was testing mine on hundreds of files
+2013-08-01 23:59:29	Armageddon	and I can guarantee that it works premo
+2013-08-01 23:59:40	J_Caselles	(I was talking about m0rin09m`
+2013-08-01 23:59:58	J_Caselles	ok, I trust you ;)
