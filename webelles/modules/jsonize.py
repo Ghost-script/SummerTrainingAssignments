@@ -9,6 +9,7 @@ from json import dump, load
 from sys import exit
 from requests import get
 from argparse import ArgumentParser
+from collections import OrderedDict
 
 def convert_log (name, date, log_filename, json_filename, url=False):
     """
@@ -51,7 +52,7 @@ def convert_log (name, date, log_filename, json_filename, url=False):
     else:
         loaded_json = load(json_file)
         json_file.close()
-        loaded_json["log_%s" %date] = new_entry
+        loaded_json["logs"]["log_%s" %date] = new_entry
 
     try:
         json_file = open(json_filename, "w")
@@ -74,7 +75,7 @@ def fetch_from_url (url):
         exit ("Error: Server returns %s -- %s" % (r.status_code, r.reason))
 
 
-def load_log (date, json_filename):
+def load_log (json_filename, log_id = None):
     try:
         json_file = open(json_filename)
 
@@ -82,7 +83,11 @@ def load_log (date, json_filename):
         exit ("Error. Json file '%s' not found" % json_filename)
 
     else:
-        return load(json_file)["logs"][date]
+        if log_id:
+            return load(json_file)["logs"][log_id]
+
+        else:
+            return load(json_file)["logs"]
 
 
 def fetch_from_arnauorriols(init_day, end_day, month, json_file):
