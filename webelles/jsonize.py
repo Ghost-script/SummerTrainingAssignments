@@ -7,8 +7,10 @@ Small script to store logfiles in json data files.
 
 from json import dump, load
 from sys import exit
+from requests import get
+from argparse import ArgumentParser
 
-def convert_log (name, date, log_filename, json_filename):
+def convert_log (name, date, log_filename, json_filename, url=False):
     """
     Stores in the json_filename the content of log_filename, with the following
     format:
@@ -20,17 +22,22 @@ def convert_log (name, date, log_filename, json_filename):
     entry will be appended to it. 
 
     """
-
-
-    try:
-        log_file = open(log_filename)
-        
-    except:
-        exit("Error. File " +  log_filename + " couldn't be oppened.")
-
+    
+    
+    if url:
+        content = fetch_from_url(log_filename)
+   
     else:
-        content = log_file.read()
-        log_file.close()
+        try:
+            log_file = open(log_filename)
+            
+        except:
+            exit("Error. File " +  log_filename + " couldn't be oppened.")
+
+        else:
+            content = log_file.read()
+            log_file.close()
+
 
     new_entry = {"name" : name, "date" : date, "content" : content}
 
@@ -39,12 +46,12 @@ def convert_log (name, date, log_filename, json_filename):
 
     except IOError, e:
         print "Json file not present. Making one from scratch"
-        loaded_json = {"logs" : [new_entry]}
+        loaded_json = {"logs" : {"log_%s" %date : new_entry}}
 
     else:
         loaded_json = load(json_file)
         json_file.close()
-        loaded_json["logs"].append(new_entry)
+        loaded_json["log_%s" %date] = new_entry
 
     try:
         json_file = open(json_filename, "w")
@@ -56,5 +63,31 @@ def convert_log (name, date, log_filename, json_filename):
         dump(loaded_json, json_file)
 
 
+def fetch_from_url (url):
+    r = get(url)
+    
+    if r.status_code == 200:
+        return r.text
+
+    else:
+        exit ("Error: Server returns %s -- %s" % (r.status_code, r.reason))
+
+
 if __name__ == "__main__":
-    convert_log ("Dgplug Training Session", "28.07", "logs/28-07#dgplug.log", "logstore.json")
+    args = ArgumentParser(description="Converts log files into json databases")
+    args.add_argument("name", help="Name of the log")
+    args.add_argument("date", help="Date of the log")
+    args.add_argument("path", help="Path/url of the log")
+    args.add_argument("-u", "--url", help="Indicates path is http url", action="store_true")
+    args.add_argument("-j", "--jsonFile", help="Specifies Json file's path and name. Default: ./logstore.json", default="./logstore.json")
+    
+    parsed = args.parse_args()
+
+    if parsed.url:
+        convert_log(parsed.name, parsed.date, parsed.path, parsed.jsonFile, True)
+
+    else:
+        convert_log(parsed.name, parsed.date, parsed.path, parsed.jsonFile, False)
+
+
+
