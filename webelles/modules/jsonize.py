@@ -64,13 +64,35 @@ def convert_log (name, date, log_filename, json_filename, url=False):
 
 
 def fetch_from_url (url):
+    print url
     r = get(url)
-    
+
     if r.status_code == 200:
         return r.text
 
     else:
         exit ("Error: Server returns %s -- %s" % (r.status_code, r.reason))
+
+
+def load_log (date, json_filename):
+    try:
+        json_file = open(json_filename)
+
+    except IOError:
+        exit ("Error. Json file '%s' not found" % json_filename)
+
+    else:
+        return load(json_file)["logs"][date]
+
+
+def fetch_from_arnauorriols(init_day, end_day, month, json_file):
+    
+    month = ("%.2i" %month)
+
+    for x in range(init_day, end_day):
+        x = ("%.2i" %x)
+
+        convert_log("test", "%s.%s" %(x, month), "http://arnauorriols.com/~ServerAdmin/irclogs/2013/" + x + "." + month + "/%23dgplug.log", json_file, True)
 
 
 if __name__ == "__main__":
