@@ -9,6 +9,7 @@ from json import dump, load
 from sys import exit
 from requests import get
 from argparse import ArgumentParser
+from datetime import date
 
 
 def convert_log (name, date, log_filename, json_filename, url=False):
@@ -129,9 +130,11 @@ def fetch_from_arnauorriols(init_day, end_day, month, json_file):
     month = ("%.2i" %month) # Make sure it's 2 digits
 
     for x in range(init_day, end_day):
+        
         x = ("%.2i" %x)
+        full_date = date(2013, int(month), int(x))
 
-        convert_log("test", "%s.%s" %(x, month),
+        convert_log("#dgplug - %s" %full_date.strftime("%a, %d of %B"), "%s.%s" %(x, month),
                     "http://arnauorriols.com/~ServerAdmin/irclogs/2013/" + 
                     x + "." + month + "/%23dgplug.log", json_file, True)
 
