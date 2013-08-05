@@ -1,0 +1,59 @@
+/* Design mesures */
+
+body
+{
+    background-color : #eeeeee
+}
+
+#header
+{
+    width : 100%;
+}
+
+#main
+{
+    max-width : 100%;
+    position : relative;
+}
+
+#nav_menu
+{
+    width : 80px;
+    position : absolute;
+    left : 0px;
+    top : 0px;
+    padding-top : 20px;
+}
+
+#content
+{
+    position : absolute;
+    left : 80px;
+    top : 0px;
+    right : 0px;
+}
+
+#log_content
+{
+    margin : 10px;
+    white-space : pre-wrap;
+    word-wrap : break-word;
+}
+
+/* Decorations */
+
+#content
+{
+    border-style : solid;
+    border-color : orange;
+}
+
+#nav_menu a
+{
+    display : block;
+    background-color : blue;
+    text-decoration : none;
+    color : white;
+    margin : 0px 8px ;
+    text-align : center;
+}
