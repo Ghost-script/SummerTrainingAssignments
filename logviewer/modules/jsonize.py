@@ -134,7 +134,8 @@ def fetch_from_arnauorriols(init_day, end_day, month, json_file):
         x = ("%.2i" %x)
         full_date = date(2013, int(month), int(x))
 
-        convert_log("#dgplug - %s" %full_date.strftime("%a, %d of %B"), "%s.%s" %(x, month),
+        convert_log("#dgplug - %s" %full_date.strftime("%a, %d of %B"),
+                    "%s.%s" %(x, month),
                     "http://arnauorriols.com/~ServerAdmin/irclogs/2013/" + 
                     x + "." + month + "/%23dgplug.log", json_file, True)
 

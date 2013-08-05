@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <title>Webelles -- Web Application Project</title>
   <link type="text/css" rel="stylesheet"
        href="{{ url_for('static',
                         filename='master.css')}}" />
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src = "{{ url_for("static", filename = "master.js") }}" ></script>
 </head>
 <body>
     <div id = "header">
