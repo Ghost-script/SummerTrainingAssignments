@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Small script to store logfiles in json data files. 
+jsonize module. Stores logs into a json file and retrieves them for further use
 
 """
 
@@ -9,21 +9,28 @@ from json import dump, load
 from sys import exit
 from requests import get
 from argparse import ArgumentParser
-from collections import OrderedDict
+
 
 def convert_log (name, date, log_filename, json_filename, url=False):
     """
     Stores in the json_filename the content of log_filename, with the following
     format:
 
-        {logs: [{"name" : "name_1", "date" : "date_1", "content" : "log_1"}, 
-                {"name" : "name_x", "date" : "date_x", "content" : "log_x"}]}
+        {"logs" : {"log_id1" : {"name" : "name_1", "date" : "date_1",
+                                "content" : "log_1"}, 
+                   "log_idx" : {"name" : "name_x", "date" : "date_x",
+                                "content" : "log_x"}
+                  }
+        }
 
     If json_filename doesn't exist it will be created, if it does, the new
     entry will be appended to it. 
 
+    If url == True, log_filename is an url which will be passed as argument
+    to fetch_from_url, which will fetch the log (plain text) using requests.
+    The url have to point to a log (or any plain-text) file.
+
     """
-    
     
     if url:
         content = fetch_from_url(log_filename)
@@ -39,14 +46,13 @@ def convert_log (name, date, log_filename, json_filename, url=False):
             content = log_file.read()
             log_file.close()
 
-
     new_entry = {"name" : name, "date" : date, "content" : content}
 
     try:
         json_file = open (json_filename, "r")
 
     except IOError, e:
-        print "Json file not present. Making one from scratch"
+        print "Json file not found. Making one from scratch"
         loaded_json = {"logs" : {"log_%s" %date : new_entry}}
 
     else:
@@ -65,10 +71,21 @@ def convert_log (name, date, log_filename, json_filename, url=False):
 
 
 def fetch_from_url (url):
-    print url
+    """
+    Uses requests to get the log text from the url given as parameter.
+    The url have to point to a plain-text file, such as: 
+    "http.example.com/mylog.log"
+    
+    Returns the text of the log.
+    
+    """
+
+    print "Retrieving '%s'..." % url,
+    
     r = get(url)
 
     if r.status_code == 200:
+        print "  --  DONE"
         return r.text
 
     else:
@@ -76,6 +93,15 @@ def fetch_from_url (url):
 
 
 def load_log (json_filename, log_id = None):
+    """
+    Loads the json_filename Json file and returns the value of the key "logs",
+    which should contain all logs stored in it. This value is a dictionary the
+    keys of which are the logs id, and it's values the corresponent log info.
+
+    If log_id specified, only returns the specified log information.
+
+    """
+
     try:
         json_file = open(json_filename)
 
@@ -91,30 +117,47 @@ def load_log (json_filename, log_id = None):
 
 
 def fetch_from_arnauorriols(init_day, end_day, month, json_file):
+    """
+    Fetches all the logs of #dgplug channel stored in 
+    "http://www.arnauorriols.com/irclogs/2013" between the days "init_day"
+    and "end_day" of the given "month". 
     
-    month = ("%.2i" %month)
+    Stores these logs in the json file "json_file".
+
+    """
+
+    month = ("%.2i" %month) # Make sure it's 2 digits
 
     for x in range(init_day, end_day):
         x = ("%.2i" %x)
 
-        convert_log("test", "%s.%s" %(x, month), "http://arnauorriols.com/~ServerAdmin/irclogs/2013/" + x + "." + month + "/%23dgplug.log", json_file, True)
+        convert_log("test", "%s.%s" %(x, month),
+                    "http://arnauorriols.com/~ServerAdmin/irclogs/2013/" + 
+                    x + "." + month + "/%23dgplug.log", json_file, True)
 
 
 if __name__ == "__main__":
+
     args = ArgumentParser(description="Converts log files into json databases")
-    args.add_argument("name", help="Name of the log")
-    args.add_argument("date", help="Date of the log")
-    args.add_argument("path", help="Path/url of the log")
-    args.add_argument("-u", "--url", help="Indicates path is http url", action="store_true")
-    args.add_argument("-j", "--jsonFile", help="Specifies Json file's path and name. Default: ./logstore.json", default="./logstore.json")
+    
+    args.add_argument("name", help = "Name of the log")
+    args.add_argument("date", help = "Date of the log")
+    args.add_argument("path", help = "Path/url of the log")
+    args.add_argument("-u", "--url", help = "Indicates path is http url",
+                      action = "store_true")
+    args.add_argument("-j", "--jsonFile", help = "Specifies Json file's path"
+                      "and name. Default: ./logstore.json",
+                      default = "./logstore.json")
     
     parsed = args.parse_args()
 
     if parsed.url:
-        convert_log(parsed.name, parsed.date, parsed.path, parsed.jsonFile, True)
+        convert_log(parsed.name, parsed.date, parsed.path, parsed.jsonFile,
+                    True)
 
     else:
-        convert_log(parsed.name, parsed.date, parsed.path, parsed.jsonFile, False)
+        convert_log(parsed.name, parsed.date, parsed.path, parsed.jsonFile,
+                    False)
 
 
 

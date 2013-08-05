@@ -9,13 +9,14 @@ from jinja2 import evalcontextfilter, Markup, escape
 # Create the application.
 APP = flask.Flask(__name__)
 
+loaded_data = OrderedDict(sorted(load_log("logs/logstore.json").items(),
+                          key = lambda t: t[0]))
 
-loaded_data = OrderedDict(sorted(load_log("logs/logstore.json").items(), key = lambda t: t[0]))
 
 @APP.route('/')
 def index():
     """ 
-    Loads logstore.json data and renders index.html
+    renders index.html, passing the loaded json data as logs variable.
     
     """
     return flask.render_template('index.html', logs = loaded_data)
@@ -24,11 +25,12 @@ def index():
 @APP.route('/log/<log_id>')
 def log(log_id):
     """
-    Displays the log given in the url, loaded from logstore.json.
+    Displays the content of the log specified in the url.
 
     """
     
-    return flask.render_template('log.html', log_content = loaded_data[log_id]["content"])
+    return flask.render_template('log.html',
+                                 log_content = loaded_data[log_id]["content"])
 
 
 if __name__ == '__main__':
