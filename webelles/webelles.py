@@ -3,7 +3,6 @@
 import flask
 from modules.jsonize import load_log
 from collections import OrderedDict
-import re
 from jinja2 import evalcontextfilter, Markup, escape
 
 # Create the application.
