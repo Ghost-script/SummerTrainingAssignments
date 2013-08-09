@@ -12,7 +12,8 @@ from argparse import ArgumentParser
 from datetime import date
 
 
-def convert_log (name, date, log_filename, json_filename, url=False):
+def convert_log (name, date, log_filename, json_filename, url = False,
+                 server_loaded = False):
     """
     Stores in the json_filename the content of log_filename, with the following
     format:
@@ -35,6 +36,9 @@ def convert_log (name, date, log_filename, json_filename, url=False):
     
     if url:
         content = fetch_from_url(log_filename)
+
+    elif server_loaded:
+        content = log_filename.read()
    
     else:
         try:
