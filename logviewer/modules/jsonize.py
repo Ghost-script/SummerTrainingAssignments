@@ -10,7 +10,7 @@ from sys import exit
 from requests import get
 from argparse import ArgumentParser
 from datetime import date
-
+from formattools import format2date
 
 def convert_log (name, date, log_filename, json_filename, url = False,
                  server_loaded = False):
@@ -32,18 +32,26 @@ def convert_log (name, date, log_filename, json_filename, url = False,
     to fetch_from_url, which will fetch the log (plain text) using requests.
     The url have to point to a log (or any plain-text) file.
 
+    If server_loaded == True, log_filename is an already open file, such as
+    a fileStorage object in request.files.
+
+    It's important to match the format of the date for all entries. To achieve
+    this, the module formattools is provided. It's recommended to apply
+    formattools.format2date function to the variable date before passing it to
+    this function.
+
     """
-    
+ 
     if url:
         content = fetch_from_url(log_filename)
 
     elif server_loaded:
         content = log_filename.read()
-   
+
     else:
         try:
             log_file = open(log_filename)
-            
+
         except:
             exit("Error. File " +  log_filename + " couldn't be oppened.")
 
@@ -80,13 +88,13 @@ def fetch_from_url (url):
     Uses requests to get the log text from the url given as parameter.
     The url have to point to a plain-text file, such as: 
     "http.example.com/mylog.log"
-    
+
     Returns the text of the log.
-    
+
     """
 
     print "Retrieving '%s'..." % url,
-    
+
     r = get(url)
 
     if r.status_code == 200:
@@ -131,17 +139,14 @@ def fetch_from_arnauorriols(init_day, end_day, month, json_file):
 
     """
 
-    month = ("%.2i" %month) # Make sure it's 2 digits
-
-    for x in range(init_day, end_day):
+    for x in range(int(init_day), int(end_day)):
         
-        x = ("%.2i" %x)
-        full_date = date(2013, int(month), int(x))
-
+        full_date = date(2013, int(month), x)
+        formated_date = format2date(x, month)
         convert_log("#dgplug - %s" %full_date.strftime("%a, %d of %B"),
-                    "%s.%s" %(x, month),
+                    formated_date,
                     "http://arnauorriols.com/~ServerAdmin/irclogs/2013/" + 
-                    x + "." + month + "/%23dgplug.log", json_file, True)
+                    formated_date + "/%23dgplug.log", json_file, True)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,13 @@
 {% extends "master.html" %}
 
 {% block content %}
+
 <ul>
+
     {% for a_log in logs.keys() %}
     <li><a href="{{ url_for('log', log_id = a_log) }}">{{ a_log }}</a></li>
     {% endfor %}
+
 </ul>
 
 {% endblock %}

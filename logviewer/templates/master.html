@@ -1,41 +1,62 @@
 <!DOCTYPE html>
+
 <html lang='en'>
+
 <head>
   <meta charset="UTF-8" />
   <title>Webelles -- Web Application Project</title>
+
   <link type="text/css" rel="stylesheet"
-       href="{{ url_for('static',
-                        filename='master.css')}}" />
-  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src = "{{ url_for("static", filename = "master.js") }}" ></script>
+        href="{{ url_for('static', filename='master.css')}}" />
+
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+  <script src = "{{ url_for("static", filename = "master.js") }}"></script>
+
 </head>
+
 <body>
+
     <div id = "header">
         <!-- Header -->
         <h1>Webelles Web App Project </h1>
         <h2>Dgplug Summer Training logs</h2>
     </div>
+
     <div id = "main">
+
         <!-- Main container, with navigation menu and content -->
         <div id = "nav_menu">
+
             <!-- Navigation menu -->
             <a id = "home" href="{{ url_for('index') }}">HOME</a>
+
             {% if not session.logged_in %}
                 <a id = "login" href = "{{ url_for('login') }}">Log in</a>
             {% else %}
-                <a id = "upload_log" href = "{{ url_for('upload_log') }}">Upload log</a>
-                <a id = "log out" href = "{{ url_for('logout') }}">Log out</a>
+            <a id = "upload_log" 
+               href = "{{ url_for('upload_log') }}">Upload log</a>
+
+           <a id = "log out" href = "{{ url_for('logout') }}">Log out</a>
             {% endif %}
 
         </div>
+
         <div id = "content">
+
             <!-- Content block -->
+
             {% block content %}
             {% endblock %}
+
         </div>
+
     </div>
+
     <div id = "footer">
         <!-- Footer -->
     </div>
+
 </body>
+
 </html>

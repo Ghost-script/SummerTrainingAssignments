@@ -1,14 +1,45 @@
 {% extends "master.html" %}
+
 {% block content %}
-<form action = "{{ url_for('upload_log') }}" enctype = "multipart/form-data" method = "POST">
+
+<form action = "{{ url_for('upload_log') }}" 
+      enctype = "multipart/form-data" 
+      method = "POST">
+
     <dl>
         <dt>Title of the log:</dt>
-        <dd><input type = "text" name = "title"></dd>
+        <dd><input type = "text" name = "title" required></dd>
+
         <dt>Date of the log: </dt>
-        <dd>Day: <input type = "text" name = "date_day" size = "2"> Month: <input type = "text" name = "date_month" size = "2"></dd>
+        <dd>Day: <input type = "text"
+                        name = "date_day"
+                        size = "2"
+                        pattern = "([0-2]?[0-9])|(3[0-1])"
+                        title = "Day of the month"
+                        required>
+
+            Month: <input type = "text"
+                          name = "date_month"
+                          size = "2"
+                          pattern = "(0?[1-9])|(1[0-2])"
+                          title = "Number of month"
+                          required>
+        </dd>
+
         <dt>File: </dt>
-        <dd><input type = "file" accept = "text/plain" name = "filepath"><dd>
+        <dd><input type = "file"
+                   accept = ".log, text/plain"
+                   name = "filepath"
+                   required>
+        </dd>
+
         <dd><input type = "submit" value = "Submit"></dd>
     </dl>
+
 </form>
+
+{% if error %}
+<p class = "error_msg">{{ error }}</p>
+{% endif %}
+
 {% endblock %}
