@@ -4,7 +4,7 @@
 import flask
 from modules.jsonize import load_log, convert_log
 from modules.formattools import format2date
-from collections import OrderedDict
+from ordereddict import OrderedDict
 from os.path import dirname, join
 from werkzeug import secure_filename
 from werkzeug.contrib.cache import SimpleCache
