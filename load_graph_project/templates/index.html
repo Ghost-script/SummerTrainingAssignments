@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world!</title>
+    <link type="text/css" rel="stylesheet"
+    href="{{ url_for('static',
+    filename='hello.css')}}" />
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+    <script src = "libraries/jquery.flot.min.js"> </script>
+    <script src = "{{ url_for('static', filename = 'plottingloads.js') }}"> </script>
+
+</head>
+<body>
+
+    <div id = "plot" style = "width:600px; height:300px"> </div>
+</body>
+</html>
