@@ -1,0 +1,5 @@
+storeloads.py needs to be fired every 5 minutes. This is achieved by setting
+up a crontab. Just type 'crontab -e' and add this lines:
+
+# PYTHON storeloads.py file. Fires every 5 minutes and stores the system load.
+*/5 * * * * python /path/to/script/storeloads.py
