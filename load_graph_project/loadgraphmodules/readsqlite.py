@@ -13,23 +13,57 @@ from time import strptime
 
 def fetch_database( select_by, start, end, day_for_time, database_name):
     """
-    Selects the content from the sqlite database 
+    Selects the content from the sqlite database, filtering it with the
+    parameters given. 
+        
+        select_by: column from where to apply the range filter. Can be
+                    time or date.
 
+        start, stop: specifies the range to be filtered.
+
+        day_for_time: If select_by == time, specifies the day from with the 
+                      time range applies. 
+
+        database_name: The name of the database the be queried
+
+
+    Returns an array with all the data, with the following structure:
+        
+        [
+            [
+                [timestamp1, load_1m1], 
+                [timestamp2, load_1m2], 
+                [timestampx, load_1mx]
+            ],
+            [
+                [timestamp1, load_5m1], 
+                [timestamp2, load_5m2], 
+                [timestampx, load_5mx]
+            ],
+            [
+                [timestamp1, load_15m1], 
+                [timestamp2, load_15m2], 
+                [timestampx, load_15mx]
+            ]
+        ]
+
+    being timestamp the timestamp in seconds of the date+time data.
 
     """
+
 
     queries = [[],[],[]]
 
     database = connect(database_name)
     cursor = database.cursor()
     
-    if str(select_by) == "all" :
+    if str(select_by) == "all":
         cursor.execute("""
                 SELECT date, time, load_1m, load_5m, load_15m
-                FROM load_values""" )
+                FROM load_values""")
 
     else:
-        sqlite_string = """
+        sqlite_string ="""
             SELECT date, time, load_1m, load_5m, load_15m
             FROM load_values
             WHERE %s BETWEEN :start AND :end
@@ -49,9 +83,3 @@ def fetch_database( select_by, start, end, day_for_time, database_name):
         queries[2].append([time2timestamp, row[4]])
 
     return queries
-
-
-
-if __name__ == "__main__":
-
-    print "hola"
