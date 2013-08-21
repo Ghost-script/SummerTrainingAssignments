@@ -31,7 +31,7 @@
 
         <input type = "radio" name = "selectby" id = "time" value = "time"></input>
         <br><br>
-        <span id = "day_for_time_span" style = "display:none">Day from wich to select<input type = "text" name = "day_for_time" id ="day_for_time"></input></span><br>
+        <span id = "day_for_time_span" style = "display:none">Day from wich to select<input type = "text" name = "day_for_time" id ="day_for_time" pattern = "(((20)[1-9][0-9])(/|-|\.|:|')?(((0[1-9])|(1[0-2]))(/|-|\.|:|')?(([0-2][0-9])|(3[0-1]))?)?)" title = "Date string, like: '2013' or '2013/08' or '2013-08-21'"></input></span><br>
         <span id = "selection_span" style = "display:none">
             Start of selection<input type = "text" name = "start"> End of selection <input type = "text" name = "end"></span><br>
         <input type = "submit" value = "Submit">
