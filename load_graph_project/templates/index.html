@@ -16,6 +16,18 @@
        plot_data[1][x][0] = plot_data[1][x][0]*1000;
        plot_data[2][x][0] = plot_data[2][x][0]*1000;
        }
+       var plot_data1 = {
+           label : "Average load last minute",
+           data : plot_data[0]
+       }
+       var plot_data2 = {
+           label : "Average load last 5 minutes",
+           data : plot_data[1]
+       }
+       var plot_data3 = {
+           label : "Average load last 5 minutes",
+           data : plot_data[2]
+       }
     </script>
     <script src = "{{ url_for('static', filename = 'plottingloads.js') }}"> </script>
 

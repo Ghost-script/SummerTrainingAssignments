@@ -20,6 +20,6 @@ $(document).ready(function(){
             $("#selection_span").hide().children().prop("required", false);
         }
     });
-    $.plot($("#plot"),plot_data, {xaxis : {mode : "time"}});
+    $.plot($("#plot"),[plot_data1, plot_data2, plot_data3], {xaxis : {mode : "time"}, legend : {show : true, position : "ne", margin : 10}});
 
 });
