@@ -7,12 +7,35 @@
     href="{{ url_for('static',
     filename='hello.css')}}" />
     <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
-    <script src = "libraries/jquery.flot.min.js"> </script>
+    <script src = "{{ url_for('static', filename = 'jquery.flot.min.js') }}"> </script>
+    <script src = "{{ url_for('static', filename = 'jquery.flot.time.min.js') }}"> </script>
+    <script>
+        var plot_data = {{ plot_data }};
+       for (var x=0; x < plot_data[0].length; x++){
+       plot_data[0][x][0] = plot_data[0][x][0]*1000;
+       plot_data[1][x][0] = plot_data[1][x][0]*1000;
+       plot_data[2][x][0] = plot_data[2][x][0]*1000;
+       }
+    </script>
     <script src = "{{ url_for('static', filename = 'plottingloads.js') }}"> </script>
 
 </head>
 <body>
+    <form id = "form" action = "{{ url_for('index') }}" method = "GET">
+        <label for = "all">View all</label>
+        <input type = "radio" name ="selectby" id = "all" value = "all" checked></input>
+        <label for = "date">&emsp;Select by date</label>
 
-    <div id = "plot" style = "width:600px; height:300px"> </div>
+        <input type = "radio" name = "selectby" id = "date" value = "date"></input>
+        <label for = "time">&emsp;Select by time </label>
+
+        <input type = "radio" name = "selectby" id = "time" value = "time"></input>
+        <br><br>
+        <span id = "day_for_time_span" style = "display:none">Day from wich to select<input type = "text" name = "day_for_time" id ="day_for_time"></input></span><br>
+        <span id = "selection_span" style = "display:none">
+            Start of selection<input type = "text" name = "start"> End of selection <input type = "text" name = "end"></span><br>
+        <input type = "submit" value = "Submit">
+    </form>
+    <div id = "plot" style = "width:800px; height:400px"> </div>
 </body>
 </html>

@@ -9,7 +9,7 @@ Script to be run every 5 minutes using Crontab.
 from os import getloadavg
 from sqlite3 import *
 from time import strftime, gmtime
-
+from os.path import realpath, join
 def get_load():
     
     load_1m, load_5m, load_15m = getloadavg()
@@ -23,6 +23,7 @@ def get_load():
 
 def store_in_sqlite(results_dict, sqlite_name):
 
+    print sqlite_name
     database = connect(sqlite_name)
     db_cursor = database.cursor()
 
@@ -55,9 +56,9 @@ def store_in_sqlite(results_dict, sqlite_name):
     database.commit()
     database.close()
 
-
 if __name__ == "__main__":
-    store_in_sqlite(get_load(), "loads.db")
+    store_in_sqlite(get_load(), "/var/www/html/loadgraph/database/sloads.db")
+
 
 
 

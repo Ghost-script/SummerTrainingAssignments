@@ -6,29 +6,41 @@ Reads the database and returns the desired content.
 """
 
 from sqlite3 import *
+from calendar import timegm
+from time import strptime
 
-def fetch_database(value_type, select_by, start, end, database_name):
+def fetch_database( select_by, start, end, day_for_time, database_name):
 
-    queries = []
+    queries = [[],[],[]]
 
 
     database = connect(database_name)
     cursor = database.cursor()
-    cursor.execute("""
-        SELECT select_by, :value_type FROM load_values
-        WHERE :select_by BETWEEN :start AND :end
-        """, {"value_type" : value_type, "select_by" : select_by, "start" : str(start), "end" : str(end)})
+    if str(select_by) == "all" :
+        print "using tita"
 
-    """
+        cursor.execute("""SELECT date, time, load_1m, load_5m, load_15m FROM load_values""" )
+    else:
+        sqlite_string = """
+            SELECT date, time, load_1m, load_5m, load_15m FROM load_values
+            WHERE %s BETWEEN :start AND :end 
+            """ % select_by
+        if select_by == "time":
+            sqlite_string += "AND date = :day_for_time" 
+            print sqlite_string
+        cursor.execute(sqlite_string, {"start" : str(start), "end" : str(end), "day_for_time" : str(day_for_time)})
+
     for row in cursor.fetchall():
-        queries.append([row[0], row[1])
+        print row
+        time2timestamp = int(timegm(strptime(row[0]+row[1], "%Y%m%d%H%M%S")))
+        queries[0].append([time2timestamp, row[2]])
+        queries[1].append([time2timestamp, row[3]])
+        queries[2].append([time2timestamp, row[4]])
 
     
     return queries
-    """
 
-    return cursor.fetchall()
 
 if __name__ == "__main__":
 
-    print fetch_by_date(20130819, 20130819, "loads.db")
+    print "hola"
